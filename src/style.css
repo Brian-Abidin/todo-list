@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  width: 100vw;
+  height: 40px;
+  font-size: 40px;
+  color: black;
+}
