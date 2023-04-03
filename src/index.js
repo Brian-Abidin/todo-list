@@ -19,3 +19,36 @@ UI should be able to:
     - delete a todo
     
 */
+
+/*
+- Write an array 
+
+*/
+
+for (let i = Array.length - 1; i < Array.length; i += 1) {
+  // code here adds task to array
+}
+
+function createObject(name, desc, urgency) {
+  const task = {
+    title: name,
+    description: desc,
+    priority: urgency
+  };
+  return {
+    task
+  };
+}
+
+function addTaskProperty(obj, name, value) {
+  Object.defineProperty(obj, name, {
+    value,
+    writable: true
+  });
+}
+
+const newtask = createObject("newtask", "plans out a plan", "green");
+addTaskProperty(newtask, "tag", "gaming");
+addTaskProperty(newtask, "tag", "sports");
+
+console.log(newtask);
