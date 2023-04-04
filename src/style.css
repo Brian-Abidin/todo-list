@@ -3,10 +3,48 @@ body {
   padding: 0;
 }
 
+.wrapper {
+  min-height: 100vh;
+  background-color: rgb(209, 232, 255);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar_button {
+  border-style: none;
+  background-color: beige;
+  height: 30px;
+  width: 40px;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  margin-left: 20px;
+  cursor: grab;
+}
+
 .title {
-  width: 100vw;
+}
+
+.header,
+.footer {
+  margin: 10px 10px 0px 10px;
   height: 40px;
-  font-size: 40px;
-  color: black;
-  background-color: aqua;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(9, 133, 248);
+  border-radius: 10px;
+}
+
+.footer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding-top: 10px;
 }
