@@ -32,6 +32,7 @@ for (let i = Array.length - 1; i < Array.length; i += 1) {
 // create object
 function addProject(name, desc, urgency, time) {
   return {
+    type: "project",
     name,
     description: desc,
     priority: urgency,
@@ -47,6 +48,7 @@ function addProject(name, desc, urgency, time) {
 
 function addTask(obj, title, desc) {
   const task = {
+    type: "task",
     title,
     description: desc
   };
@@ -55,10 +57,19 @@ function addTask(obj, title, desc) {
 
 function addChecklist(obj, title) {
   const checkList = {
+    type: "checklist",
     title
   };
   obj.tasks.push(checkList);
   // DOM element function that adds the checklist box
+}
+
+function addTag(obj, title) {
+  const tag = {
+    type: "tag",
+    title
+  };
+  obj.tags.push(tag);
 }
 
 // form that can be written
@@ -71,8 +82,7 @@ addChecklist(newtask, "Open Car");
 //   writable: false,
 //   enumerable: true
 // });
-
-newtask.tags.push("gaming", "work", "play");
+addTag(newtask, "work");
 
 // addTaskProperty(newtask, "tag", "gaming");
 // addTaskProperty(newtask, "tag", "sports");
