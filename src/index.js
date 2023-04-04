@@ -57,6 +57,7 @@ function addChecklist(obj, title) {
   const checkList = {
     title
   };
+  obj.tasks.push(checkList);
   // DOM element function that adds the checklist box
 }
 
@@ -64,7 +65,7 @@ function addChecklist(obj, title) {
 const newtask = addProject("newtask", "plans out a plan", "green", "11:59");
 addTask(newtask, "Buy a House", "Get enough money to buy an entire house");
 addTask(newtask, "Buy a Car", "Get enough money to buy an entire car");
-
+addChecklist(newtask, "Open Car");
 // Object.defineProperty(newtask, "tag", {
 //   value: "gaming",
 //   writable: false,
