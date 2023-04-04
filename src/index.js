@@ -29,26 +29,51 @@ for (let i = Array.length - 1; i < Array.length; i += 1) {
   // code here adds task to array
 }
 
-function createObject(name, desc, urgency) {
-  const task = {
-    title: name,
-    description: desc,
-    priority: urgency
-  };
+// create object
+function addProject(name, desc, urgency, time) {
   return {
-    task
+    name,
+    description: desc,
+    priority: urgency,
+    dueDate: time,
+    tags: [],
+    tasks: []
   };
 }
 
-function addTaskProperty(obj, name, value) {
-  Object.defineProperty(obj, name, {
-    value,
-    writable: true
-  });
+// add a task to project
+// - add a task w/ description & due date, priority
+// - add a checklist w/ due date, priority
+
+function addTask(obj, title, desc) {
+  const task = {
+    title,
+    description: desc
+  };
+  obj.tasks.push(task);
 }
 
-const newtask = createObject("newtask", "plans out a plan", "green");
-addTaskProperty(newtask, "tag", "gaming");
-addTaskProperty(newtask, "tag", "sports");
+// form that can be written
+const newtask = addProject("newtask", "plans out a plan", "green", "11:59");
+addTask(newtask, "Buy a House", "Get enough money to buy an entire house");
+addTask(newtask, "Buy a Car", "Get enough money to buy an entire car");
+
+// Object.defineProperty(newtask, "tag", {
+//   value: "gaming",
+//   writable: false,
+//   enumerable: true
+// });
+
+newtask.tags.push("gaming", "work", "play");
+
+// addTaskProperty(newtask, "tag", "gaming");
+// addTaskProperty(newtask, "tag", "sports");
+// const objProps = Object.keys(newtask).length;
+
+console.log(Object.keys(newtask).length);
+
+for (const key in newtask) {
+  console.log(key);
+}
 
 console.log(newtask);
