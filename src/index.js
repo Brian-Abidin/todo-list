@@ -53,6 +53,13 @@ function addTask(obj, title, desc) {
   obj.tasks.push(task);
 }
 
+function addChecklist(obj, title) {
+  const checkList = {
+    title
+  };
+  // DOM element function that adds the checklist box
+}
+
 // form that can be written
 const newtask = addProject("newtask", "plans out a plan", "green", "11:59");
 addTask(newtask, "Buy a House", "Get enough money to buy an entire house");
