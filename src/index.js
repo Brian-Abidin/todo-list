@@ -108,33 +108,42 @@ for (const key in allProjects[0]) {
 const result = new Date();
 const resultFormatted = format(result, "k");
 
-
 (function welcomeIcon() {
   const currentHour = +format(new Date(), "k");
-  switch(true) {
-    case(currentHour >= 20 || currentHour < 6):
+  switch (true) {
+    case currentHour >= 20 || currentHour < 6:
       // change dom text.content = moon
       // change dom text.content = Good Evening
-      console.log("moon")
+      console.log("moon");
       break;
-    case(currentHour >= 6 && currentHour < 12):
+    case currentHour >= 6 && currentHour < 12:
       // change dom text.content = sunrise
       // change dom text.content = Good Morning
-       console.log("sunrise")
+      console.log("sunrise");
       break;
-    case(currentHour >= 12 && currentHour < 18):
+    case currentHour >= 12 && currentHour < 19:
       // change dom text.content = sun
       // change dom text.content = Good Afternoon
-       console.log("sun")
+      console.log("sun");
       break;
-    case(currentHour >= 18 && currentHour < 20):
+    case currentHour >= 19 && currentHour < 20:
       // change dom text.conent = sunset
       // change dom text.content = Good Evening
-       console.log("sunset")
+      console.log("sunset");
       break;
     default:
       console.log("welcomeIcon function broken");
   }
-}());
+})();
+
+const button = document.getElementById("create");
+const formWrap = document.getElementById("formPopup");
+const form = document.getElementById("formContainer");
+
+button.addEventListener("click", () => {
+  formWrap.style.display = "block";
+  form.style.display = "block";
+  console.log("1");
+});
 
 console.log(resultFormatted);
