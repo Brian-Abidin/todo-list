@@ -1,0 +1,9 @@
+sunrise.png
+https://www.flaticon.com/free-icon/sunrise_9916280?term=sunrise&page=1&position=7&origin=search&related_id=9916280
+
+sun.png
+https://www.flaticon.com/free-icon/sun_9916277?term=sun&page=1&position=1&origin=style&related_id=9916277
+
+moon.png
+https://www.flaticon.com/free-icon/moon_740878?term=moon&page=1&position=4&origin=search&related_id=740878
+
