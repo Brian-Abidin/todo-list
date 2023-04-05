@@ -1,3 +1,5 @@
+import { toDate, format } from "date-fns";
+
 /* 
 To-do list; objects that are created 
 using factories or constructors/classes
@@ -77,6 +79,7 @@ function addTag(title) {
     type: "tag",
     title
   };
+  // "allprojects[0]" is a place holder
   allProjects[0].tags.push(tag);
 }
 
@@ -101,3 +104,39 @@ console.log(Object.keys(allProjects[0]).length);
 for (const key in allProjects[0]) {
   console.log(key);
 }
+
+const result = new Date();
+const resultFormatted = format(result, "k");
+
+
+function welcomeIcon() {
+  const currentHour = format(new Date(), "k");
+  // if(currentHour >= 20 || currentHour <= 6){
+  //   // change dom text.content = moon
+  // } else if 
+  switch(currentHour) {
+    case (currentHour >= 20 || currentHour < 6):
+      // change dom text.content = moon
+      // change dom text.content = Good Evening
+      break;
+    case  (currentHour >= 6 || currentHour < 12):
+      // change dom text.content = sunrise
+      // change dom text.content = Good Morning
+      break;
+    case (currentHour >= 12 || currentHour < 18):
+      // change dom text.content = sun
+      // change dom text.content = Good Afternoon
+      break;
+    case (currentHour >= 18 || currentHour < 20)
+      // change dom text.conent = sunset
+      // change dom text.content = Good Evening
+    default:
+      // do nothing
+  }
+}
+
+console.log(resultFormatted);
+
+// give credit to icon authors
+// sunrise https://www.flaticon.com/free-icon/sunrise_9916280?term=sunrise&page=1&position=7&origin=search&related_id=9916280
+// 
