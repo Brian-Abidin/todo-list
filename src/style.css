@@ -49,6 +49,7 @@ body {
   border-top-right-radius: 10px;
   display: grid;
   grid-template-columns: auto 1fr auto;
+  background-image: linear-gradient(rgb(51, 41, 41), rgb(0, 34, 128));
 }
 
 .c_bottom {
@@ -61,25 +62,30 @@ body {
 
 .weather {
   width: 20vw;
+  max-width: 140px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: rgb(255, 255, 255);
+  justify-content: left;
+  
 }
+  
 
 .weather_icon{
   width: 100%;
-  max-width: 170px;
+  max-width: 140px;
+  max-height: 140px;
+  margin-left: 5px;
 }
 
 
 
 .greeting {
-  background-color: lightblue;
   display: flex;
   align-items: center;
   justify-content: left;
   font-size: calc(1.5rem + 1.5vw);
+  color: white;
+  margin-left: 10px;
 }
 
 .date {
