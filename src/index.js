@@ -127,11 +127,12 @@ function welcomeIcon() {
       // change dom text.content = sun
       // change dom text.content = Good Afternoon
       break;
-    case (currentHour >= 18 || currentHour < 20)
+    case (currentHour >= 18 || currentHour < 20):
       // change dom text.conent = sunset
       // change dom text.content = Good Evening
+      break;
     default:
-      // do nothing
+      console.log("welcomeIcon function broken")
   }
 }
 
