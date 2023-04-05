@@ -37,7 +37,7 @@ body {
   margin: 0px 10px 0px 10px;
   border-radius: 10px;
   height: 100%;
-  background-color: cadetblue;
+  background-color: azure;
   display: grid;
   grid-template-rows: auto 1fr;
 }
@@ -53,12 +53,13 @@ body {
 }
 
 .c_bottom {
-  background-color: azure;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display: grid;
   grid-template-columns: auto 1fr;
 }
+
+
 
 .weather {
   width: 20vw;
@@ -83,13 +84,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: left;
-  font-size: calc(1.5rem + 1.5vw);
+  font-size: calc(1.5rem + 1vw);
   color: white;
   margin-left: 10px;
+  text-shadow: 4px 4px black;
 }
 
 .date {
   width: 30vw;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.dateText{
+  color: white;
+  display: flex;
+  align-content: center;
+  justify-content: right;
+  background-color: aqua;
+}
+.dateShow{
+  background-color: white;
 }
 
 .cright {
@@ -98,7 +115,30 @@ body {
 
 .cleft {
   width: 40vw;
-  background-color: rgb(15, 51, 51);
+  background-color: rgb(150, 236, 236);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 550px;
+  overflow-y:scroll;
+}
+
+.bottom_title{
+  font-size: calc(1rem + 0.9vw);
+  text-shadow: 1px 1px rgb(112, 112, 112);
+  margin: 5px 5px 0px 15px;
+}
+
+.project1{
+  width: 90%;
+  background-color: rgb(224, 157, 157);
+  border-radius: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  margin-left: 10px;
+  min-height: 35px;
 }
 
 .header,
