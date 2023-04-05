@@ -146,4 +146,15 @@ button.addEventListener("click", () => {
   console.log("1");
 });
 
+function closeTheForm() {
+  formWrap.style.display = "none";
+  form.style.display = "none";
+}
+
+window.onclick = function close(event) {
+  if (event.target === formWrap) {
+    closeTheForm();
+  }
+};
+
 console.log(resultFormatted);
