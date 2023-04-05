@@ -6,10 +6,21 @@
     <script defer src="main.js"></script>
     <link rel="stylesheet" href="../src/style.css" />
   </head>
-  <body>
-    <div class="wrapper">
+  <body">
+    <div class="wrapper" id="wrapper">
       <div class="header">
-        <button class="sidebar_button"></button>
+        <button class="sidebar_button" id="create"></button>
+          <div class="formPopup" id="formPopup">
+            <form action="/action_page.php" class="formContainer" id="formContainer">
+              <div class="button_container">
+                <button class="formClose"></button>
+              </div>
+              <div class="formContent">
+                <div class="formTop"></div>
+                <div class="formBottom"></div>
+              </div>
+          </form>
+          </div>
         <div class="title">Simple Planning</div>
       </div>
       <div class="content">
@@ -17,19 +28,31 @@
           <div class="weather">
             <img class="weather_icon" src="../src/images/moon.png"></img>
           </div>
-          <div class="greeting">Good Morning, Giannis Antetokonumpo</div>
+          <div class="greeting">Good Evening, Giannis Antetokonumpo</div>
           <div class="date">
-            <div class="showDate"></div>
-            <div class="showTasks"></div>
+            <div class="dateText"></div>
+            <div class="dateShow"></div>
           </div>
         </div>
         <div class="c_bottom">
-          <div class="cright"></div>
-          <div class="cleft"></div>
+          <div class="cleft">
+            <div class="bottom_header">
+              <div class="bottom_title">Projects</div>
+              <div class="orderby_date"></div>
+            </div>
+            <div class="project1">
+              <div class="project_priority"></div>
+              <div class="project_title">Eat Bananas for Dinner and Lunch and Breakfast</div>
+              <div class="project_duedate">4/11/23</div>
+              <button class="project_button"></button>
+            </div>
+          </div>
+          <div class="cright">
+            <div class="right_title">Create a Project</div>
+          </div>
         </div>
       </div>
       <div class="footer">Odin Project 2023</div>
     </div>
-    <div></div>
   </body>
 </html>
