@@ -5,5 +5,5 @@ sun.png
 https://www.flaticon.com/free-icon/sun_9916277?term=sun&page=1&position=1&origin=style&related_id=9916277
 
 moon.png
-https://www.flaticon.com/free-icon/moon_740878?term=moon&page=1&position=4&origin=search&related_id=740878
+https://www.flaticon.com/free-icon/moon_2387889?term=moon&page=1&position=18&origin=search&related_id=2387889
 
