@@ -111,6 +111,8 @@ body {
 
 .cright {
   background-color: blue;
+  border-radius: 10px;
+  margin: 10px;
 }
 
 .cleft {
@@ -136,9 +138,37 @@ body {
   width: 90%;
   background-color: rgb(224, 157, 157);
   border-radius: 10px;
-  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 2px 2px grey;
   margin-left: 10px;
   min-height: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project_priority{
+  margin-left: 10px;
+  width: 20px;
+  background-color: green;
+  border-radius: 2px;
+  height: 50%;
+}
+
+.project_title{
+  font-weight: bold;
+  text-overflow:ellipsis;
+  overflow: hidden;
+  width: 100%;
+  height: 20px;
+  white-space: nowrap;
+}
+
+.project_button{
+  width: 30px;
+  height: 50%;
+  margin-right: 10px;
+  box-shadow: 2px 2px grey;
+  border-radius: 3px;
 }
 
 .header,
