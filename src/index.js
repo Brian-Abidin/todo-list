@@ -139,6 +139,7 @@ const resultFormatted = format(result, "k");
 const button = document.getElementById("create");
 const formWrap = document.getElementById("formPopup");
 const form = document.getElementById("formContainer");
+const closeForm = document.getElementById("formClose");
 
 button.addEventListener("click", () => {
   formWrap.style.display = "block";
@@ -151,10 +152,14 @@ function closeTheForm() {
   form.style.display = "none";
 }
 
-window.onclick = function close(event) {
-  if (event.target === formWrap) {
-    closeTheForm();
-  }
-};
+closeForm.addEventListener("click", () => {
+  closeTheForm();
+});
+
+// window.onclick = function close(event) {
+//   if (event.target === formWrap) {
+//     closeTheForm();
+//   }
+// };
 
 console.log(resultFormatted);
