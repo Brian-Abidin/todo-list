@@ -66,10 +66,11 @@ textarea {
   width: 100%;
   background-color: white;
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   height: 30px;
   border-bottom: 2px solid black;
+  font-size: x-large;
 }
 
 .formClose {
@@ -88,6 +89,17 @@ textarea {
   width: 80%;
   height: 3px;
   background-color: red;
+}
+
+#btnSubmit {
+  font-size: xx-large;
+  background-color: transparent;
+  border-radius: 2px;
+  width: fit-content;
+  color: green;
+  margin-right: 5px;
+  border: none;
+  cursor: grab;
 }
 
 .formContent {
@@ -126,15 +138,15 @@ input[type="text"] {
 .btnTag {
   width: 20px;
   height: 20px;
-  text-align: center;
   position: absolute;
   left: 190px;
-  top: 115px;
+  top: 122px;
   border-radius: 10px;
   border-color: black;
   background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
+  align-items: center;
   cursor: grab;
 }
 
@@ -143,20 +155,15 @@ input[type="text"] {
   border: 2px solid black;
 }
 
+.formLeft {
+  margin-top: 5px;
+}
+
 .formRight {
-  font-size: 18px;
+  font-size: 16px;
   color: black;
   display: flex;
   flex-direction: column;
-}
-
-#btnSubmit {
-  border-style: none;
-  background-color: transparent;
-  border: 2px solid black;
-  border-radius: 2px;
-  width: fit-content;
-  background-color: rgb(29, 221, 61);
 }
 
 .content {
