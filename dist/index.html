@@ -11,13 +11,43 @@
       <div class="header">
         <button class="sidebar_button" id="create"></button>
           <div class="formPopup" id="formPopup">
-            <form action="/action_page.php" class="formContainer" id="formContainer">
+            <form action="" method="get" class="formContainer" id="formContainer">
               <div class="button_container">
                 <button class="formClose"></button>
               </div>
               <div class="formContent">
-                <div class="formTop"></div>
-                <div class="formBottom"></div>
+                <div class="formTop">
+                  <input type="text" id="taskName" name="taskName" placeholder="Task Name">
+                </div>
+                <div class="formBottom">
+                  <div class="formLeft">
+                    <textarea name="addTag" id="tag" cols="50" rows="3"></textarea>
+                    <button class="addTag">+</button>
+                    <textarea name="description" id="description" cols="50" rows="5" placeholder="Description..."></textarea>
+                  </div>
+                  <div class="formRight">
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" id="dueDate" name="due-date" min="2000-01-01" required>
+                    <label for="dueTime">Time:</label>
+                    <input type="time" id="dueTime" name="dueTime">
+                    <fieldset>
+                      <legend>Priority level:</legend>
+                      <div>
+                        <input type="radio" id="low" name="priority" value="low">
+                        <label for="low">Low</label>
+                      </div>
+                      <div>
+                        <input type="radio" id="medium" name="priority" value="medium" />
+                        <label for="medium">Medium</label>
+                      </div>
+                      <div>
+                        <input type="radio" id="high" name="priority" value="high" />
+                        <label for="high">High</label>
+                      </div>
+                    </fieldset>                    
+                    <button type="submit">Submit</button>
+                  </div>
+                </div>
               </div>
           </form>
           </div>
