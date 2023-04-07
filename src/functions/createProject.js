@@ -16,6 +16,14 @@ function displayProject(name, urgency, date) {
   dueDate.classList.add("project-duedate");
   projectBtn.classList.add("project-button");
 
+  if (urgency === "low") {
+    priority.style.backgroundColor = "green";
+  } else if (urgency === "medium") {
+    priority.style.backgroundColor = "orange";
+  } else if (urgency === "high") {
+    priority.style.backgroundColor = "red";
+  }
+
   showProject.setAttribute("id", projectOrder);
 
   contentLeft.appendChild(showProject);
@@ -26,6 +34,7 @@ function displayProject(name, urgency, date) {
 
   title.textContent = name;
   dueDate.textContent = date;
+  projectBtn.textContent = ">";
 }
 
 export default function createProject(name, desc, urgency, date, time) {
