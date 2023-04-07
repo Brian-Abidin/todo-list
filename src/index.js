@@ -1,4 +1,10 @@
 import { toDate, format } from "date-fns";
+import {
+  createForm,
+  formClose,
+  formContainer,
+  formPopup
+} from "./functions/domElements";
 
 /* 
 To-do list; objects that are created 
@@ -136,30 +142,19 @@ const resultFormatted = format(result, "k");
   }
 })();
 
-const button = document.getElementById("create");
-const formWrap = document.getElementById("formPopup");
-const form = document.getElementById("formContainer");
-const closeForm = document.getElementById("formClose");
-
-button.addEventListener("click", () => {
-  formWrap.style.display = "block";
-  form.style.display = "block";
+createForm.addEventListener("click", () => {
+  formPopup.style.display = "block";
+  formContainer.style.display = "block";
   console.log("1");
 });
 
 function closeTheForm() {
-  formWrap.style.display = "none";
-  form.style.display = "none";
+  formPopup.style.display = "none";
+  formContainer.style.display = "none";
 }
 
-closeForm.addEventListener("click", () => {
+formClose.addEventListener("click", () => {
   closeTheForm();
 });
-
-// window.onclick = function close(event) {
-//   if (event.target === formWrap) {
-//     closeTheForm();
-//   }
-// };
 
 console.log(resultFormatted);
