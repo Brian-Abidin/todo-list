@@ -1,9 +1,16 @@
-const button = document.getElementById("create");
+import { allProjects } from "./domElements";
 
-function openForm() {}
-
-function closeForm() {}
-
-button.onclick = function createProject() {
-  this.style.display = "block";
-};
+export default function createProject(name, desc, urgency, date, time) {
+  const project = {
+    type: "project",
+    name,
+    description: desc,
+    priority: urgency,
+    dueDate: date,
+    time,
+    tags: [],
+    tasks: []
+  };
+  allProjects.push(project);
+  console.log(allProjects);
+}
