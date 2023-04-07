@@ -29,12 +29,16 @@ function displayProject(name, urgency, date) {
 }
 
 export default function createProject(name, desc, urgency, date, time) {
+  const newDate = parseISO(date);
+  const dateFormatted = format(newDate, "M/dd/yy");
+  console.log(dateFormatted);
+
   const project = {
     type: "project",
     name,
     description: desc,
     priority: urgency,
-    dueDate: date,
+    dueDate: dateFormatted,
     time,
     tags: [],
     tasks: []
