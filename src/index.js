@@ -111,7 +111,8 @@ function addTag(title) {
 // }
 
 const result = new Date();
-const resultFormatted = format(result, "k");
+const resultFormatted = format(result, "MM/dd/yyyy");
+console.log(result);
 
 (function welcomeIcon() {
   const currentHour = +format(new Date(), "k");
