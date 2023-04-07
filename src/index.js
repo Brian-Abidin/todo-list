@@ -1,11 +1,16 @@
 import { toDate, format } from "date-fns";
 import {
+  btnSubmit,
   createForm,
+  form,
   formClose,
   formContainer,
-  formPopup
+  formPopup,
+  taskName,
+  taskValue,
+  allProjects
 } from "./functions/domElements";
-
+import addValues from "./functions/addValue";
 /* 
 To-do list; objects that are created 
 using factories or constructors/classes
@@ -28,9 +33,6 @@ UI should be able to:
 
 - Write an array 
 */
-
-const allProjects = [];
-
 for (let i = Array.length - 1; i < Array.length; i += 1) {
   // code here adds task to array
 }
@@ -38,24 +40,21 @@ for (let i = Array.length - 1; i < Array.length; i += 1) {
 // RemoveProject Function
 
 // create object
-function createProject(name, desc, urgency, time) {
-  const project = {
-    type: "project",
-    name,
-    description: desc,
-    priority: urgency,
-    dueDate: time,
-    tags: [],
-    tasks: []
-  };
-  allProjects.push(project);
-}
+// export default function createProject(name, desc, urgency, date, time) {
+//   const project = {
+//     type: "project",
+//     name,
+//     description: desc,
+//     priority: urgency,
+//     dueDate: date,
+//     time,
+//     tags: [],
+//     tasks: []
+//   };
+//   allProjects.push(project);
+// }
 
 // on click creates this object and pushes it into the array.
-createProject("newtask", "plans out a plan", "green", "11:59");
-
-console.log(allProjects[0]);
-console.log(allProjects);
 
 // add a task to project
 // - add a task w/ description & due date, priority
@@ -91,25 +90,25 @@ function addTag(title) {
 
 // form that can be written
 // const newtask = addProject("newtask", "plans out a plan", "green", "11:59");
-addTask("Buy a House", "Get enough money to buy an entire house");
-addTask("Buy a Car", "Get enough money to buy an entire car");
-addChecklist("Open Car");
+// addTask("Buy a House", "Get enough money to buy an entire house");
+// addTask("Buy a Car", "Get enough money to buy an entire car");
+// addChecklist("Open Car");
 // Object.defineProperty(newtask, "tag", {
 //   value: "gaming",
 //   writable: false,
 //   enumerable: true
 // });
-addTag("work");
+// addTag("work");
 
 // addTaskProperty(newtask, "tag", "gaming");
 // addTaskProperty(newtask, "tag", "sports");
 // const objProps = Object.keys(newtask).length;
 
-console.log(Object.keys(allProjects[0]).length);
+// console.log(Object.keys(allProjects[0]).length);
 
-for (const key in allProjects[0]) {
-  console.log(key);
-}
+// for (const key in allProjects()[0]) {
+//   console.log(key);
+// }
 
 const result = new Date();
 const resultFormatted = format(result, "k");
@@ -158,3 +157,12 @@ formClose.addEventListener("click", () => {
 });
 
 console.log(resultFormatted);
+
+function helloWorld(event) {
+  event.preventDefault();
+  addValues();
+  form.reset();
+  closeTheForm();
+}
+
+form.addEventListener("submit", helloWorld);
