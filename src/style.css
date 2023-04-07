@@ -21,18 +21,6 @@ body {
   justify-content: center;
 }
 
-.sidebar_button {
-  border-style: none;
-  background-color: beige;
-  height: 30px;
-  width: 40px;
-  border-radius: 10px;
-  position: absolute;
-  left: 0;
-  margin-left: 20px;
-  cursor: grab;
-}
-
 .formPopup {
   background: rgba(0, 0, 0, 0.7);
   height: 100%;
@@ -85,7 +73,7 @@ textarea {
   background-color: white;
 }
 
-.closesign {
+.closeSign {
   width: 80%;
   height: 3px;
   background-color: red;
@@ -150,7 +138,7 @@ input[type="text"] {
   cursor: grab;
 }
 
-#tag,
+#addTag,
 #description {
   border: 2px solid black;
 }
@@ -175,7 +163,7 @@ input[type="text"] {
   grid-template-rows: auto 1fr;
 }
 
-.c_top {
+.c_Top {
   background-color: aqua;
   height: 160px;
   border-top-left-radius: 10px;
@@ -185,7 +173,21 @@ input[type="text"] {
   background-image: linear-gradient(rgb(51, 41, 41), rgb(0, 34, 128));
 }
 
-.c_bottom {
+.bottom_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.createForm {
+  margin-right: 4vw;
+  height: 20px;
+  width: 20px;
+  margin-top: 10px;
+}
+
+.c_Bottom {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display: grid;
@@ -200,7 +202,7 @@ input[type="text"] {
   justify-content: left;
 }
 
-.weather_icon {
+.weather_Icon {
   width: 100%;
   max-width: 140px;
   max-height: 140px;
