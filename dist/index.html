@@ -9,29 +9,29 @@
   <body">
     <div class="wrapper" id="wrapper">
       <div class="header" id="header">
-          <div class="formPopup" id="formPopup">
-            <form action="" method="get" class="formContainer" id="formContainer">
-              <div class="button_container" id="button_container">
-                <button type="reset" class="formClose" id="formClose">
-                  <div class="closeSign" id="closeSign"></div>
+          <div class="formPopup" id="form-popup">
+            <form action="" method="get" class="formContainer" id="form-container">
+              <div class="button_container" id="button-container">
+                <button type="reset" class="formClose" id="form-close">
+                  <div class="closeSign" id="close-sign"></div>
                 </button>
-                <button type="submit" id="btnSubmit">+</button>
+                <button type="submit" id="btn-submit">+</button>
               </div>
-              <div class="formContent" id="formContent">
-                <input type="text" id="taskName" name="taskName" placeholder="Task Name">
-                <div class="formBottom" id="formBottom">
-                  <div class="formLeft" id="formLeft">
-                    <div class="tag_container" id="tag_container">
-                      <button type="button" class="btnTag" id="btnTag">+</button>
-                      <textarea name="addTag" id="addTag" cols="50" rows="3" placeholder="Tag..."></textarea>
+              <div class="formContent" id="form-content">
+                <input type="text" id="task-name" name="taskName" placeholder="Task Name">
+                <div class="formBottom" id="form-bottom">
+                  <div class="formLeft" id="form-left">
+                    <div class="tag_container" id="tag-container">
+                      <button type="button" class="btnTag" id="btn-tag">+</button>
+                      <textarea name="addTag" id="add-tag" cols="50" rows="3" placeholder="Tag..."></textarea>
                     </div>
                     <textarea name="description" id="description" cols="50" rows="8" placeholder="Description..."></textarea>
                   </div>
-                  <div class="formRight" id="formRight">
+                  <div class="formRight" id="form-right">
                     <label for="dueDate">Due Date:</label>
-                    <input type="date" id="dueDate" name="due-date" min="2000-01-01" required>
+                    <input type="date" id="due-date" name="due-date" min="2000-01-01">
                     <label for="dueTime">Time:</label>
-                    <input type="time" id="dueTime" name="dueTime">
+                    <input type="time" id="due-time" name="dueTime">
                     <fieldset>
                       <legend>Priority level:</legend>
                       <div>
@@ -52,33 +52,29 @@
               </div>
           </form>
           </div>
-        <div class="title">Simple Planning</div>
+        <div class="title" id="header-title">Simple Planning</div>
       </div>
       <div class="content" id="content">
-        <div class="c_Top" id="c-top">
+        <div class="c_Top" id="content-top">
           <div class="weather" id="weather">
-            <img class="weather_Icon" src="../src/images/moon.png" id="weather-Icon"></img>
+            <img class="weather_Icon" src="../src/images/moon.png" id="weather-icon"></img>
           </div>
           <div class="greeting" id="greeting">Good Evening, Giannis Antetokonumpo</div>
-          <div class="date" id="date">
-            <div class="dateText" id="dateText"></div>
-            <div class="dateShow" id="dateShow"></div>
-          </div>
         </div>
-        <div class="c_Bottom" id="c-bottom">
-          <div class="cleft" id="cleft">
+        <div class="c_Bottom" id="content-bottom">
+          <div class="cleft" id="content-left">
             <div class="bottom_header" id="bottom-header">
               <div class="bottom_title" id="bottom-title">Projects</div>
-              <button class="createForm" id="createForm"></button>
+              <button class="createForm" id="create-form"></button>
             </div>
-            <div class="project1">
-              <div class="project_priority" id="project-priority"></div>
-              <div class="project_title" id="project-title">Eat Bananas for Dinner and Lunch and Breakfast</div>
-              <div class="project_duedate" id="project-duedate">4/11/23</div>
-              <button class="project_button" id="project-button"></button>
+            <div class="project" id="project">
+              <div class="project-priority" id="project-priority"></div>
+              <div class="project-title" id="project-title">Googling Windows Giants</div>
+              <div class="project-duedate" id="project-duedate">4/11/23</div>
+              <button class="project-button" id="project-show"></button>
             </div>
           </div>
-          <div class="cright" id="cright">
+          <div class="cright" id="content-right">
             <div class="right_title" id="right-title">Create a Project</div>
           </div>
         </div>
