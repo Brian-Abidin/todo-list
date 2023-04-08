@@ -3,6 +3,7 @@ import format from "date-fns/format";
 import {
   allProjects,
   contentLeft,
+  contentRight,
   displayTags,
   displayTaskName,
   dueDateText,
@@ -22,28 +23,28 @@ import {
 
 // btnTag.addEventListener("click", addingTag());
 
-function displayProjectRight(name, desc, urgency, date, time, tags) {
-  displayTaskName.textContent = name;
-  priorityLevel.textContent = urgency;
-  rightDescription.textContent = desc;
-  dueDateText.textContent = date;
-  dueTimeText.textContent = time;
+// function displayProjectRight(name, desc, urgency, date, time, tags) {
+//   displayTaskName.textContent = name;
+//   priorityLevel.textContent = urgency;
+//   rightDescription.textContent = desc;
+//   dueDateText.textContent = date;
+//   dueTimeText.textContent = time;
 
-  // const tag = document.createElement("div");
-  // const tagName = document.createElement("div");
-  // const removeTag = document.createElement("button");
+//   // const tag = document.createElement("div");
+//   // const tagName = document.createElement("div");
+//   // const removeTag = document.createElement("button");
 
-  // tag.classList.add("tag1");
-  // tagName.classList.add("tag-name");
-  // removeTag.classList.add("remove-tag");
+//   // tag.classList.add("tag1");
+//   // tagName.classList.add("tag-name");
+//   // removeTag.classList.add("remove-tag");
 
-  // displayTags.appendChild(tag);
-  // tag.appendChild(tagName);
-  // tag.appendChild(removeTag);
+//   // displayTags.appendChild(tag);
+//   // tag.appendChild(tagName);
+//   // tag.appendChild(removeTag);
 
-  // tagName.textContent = tags;
-  // removeTag.textContent = "-";
-}
+//   // tagName.textContent = tags;
+//   // removeTag.textContent = "-";
+// }
 
 function createTags(tags) {
   for (let i = 0; i < tags.length; i += 1) {
@@ -125,6 +126,7 @@ function displayProject(name, urgency, date) {
     if (allProjects.length !== 0) {
       projectBtn.addEventListener("click", (e) => {
         const thisProject = allProjects[e.target.id - 1];
+        contentRight.style.display = "block";
         displayTags.removeChild(displayTags.firstChild);
         console.log(thisProject);
         console.log(thisProject.tags[0]);
@@ -160,14 +162,14 @@ export default function createProject(name, desc, urgency, date, time) {
     tags: [tagValue],
     tasks: []
   };
-  displayProjectRight(
-    project.name,
-    project.description,
-    project.priority,
-    project.dueDate,
-    project.time,
-    tagValue
-  );
+  // displayProjectRight(
+  //   project.name,
+  //   project.description,
+  //   project.priority,
+  //   project.dueDate,
+  //   project.time,
+  //   tagValue
+  // );
   allProjects.push(project);
   displayProject(project.name, project.priority, project.dueDate);
   console.log(allProjects);
