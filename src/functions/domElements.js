@@ -58,10 +58,12 @@ const displayTags = document.getElementById("display-tags");
 const rightDate = document.getElementById("right-date");
 const dateText = document.getElementById("date-text");
 const dueDateText = document.getElementById("due-date-text");
+const timeText = document.getElementById("time-text");
+const dueTimeText = document.getElementById("due-time-text");
 const rightDescription = document.getElementById("right-description");
 const descriptionText = document.getElementById("description-text");
 
-const addTask = document.getElementById("add-task");
+const addNotes = document.getElementById("add-notes");
 const addChecklist = document.getElementById("add-checklist");
 
 const footer = document.getElementById("footer");
@@ -121,9 +123,11 @@ export {
   rightDate,
   dateText,
   dueDateText,
+  timeText,
+  dueTimeText,
   rightDescription,
   descriptionText,
-  addTask,
+  addNotes,
   addChecklist,
   footer,
   allProjects
