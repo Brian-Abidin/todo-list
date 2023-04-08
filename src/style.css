@@ -244,6 +244,7 @@ input[type="text"] {
   background-color: blue;
   border-radius: 10px;
   margin: 10px;
+  max-height: 550px;
   overflow-y: auto;
 }
 
@@ -354,22 +355,12 @@ input[type="text"] {
   background-color: hotpink;
 }
 
-.content-right-task,
-.content-right-tags,
-.content-right-priority,
-.content-right-date,
-.content-right-description,
-.content-right-add {
-  height: 100%;
-  width: 100%;
-}
-
 .content-right-container {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: 50px repeat(3, auto) 50px;
   grid-template-areas:
     "header header"
     "task priority"
