@@ -1,7 +1,7 @@
 // Constants
-
 const wrapper = document.getElementById("wrapper");
 const header = document.getElementById("header");
+const form = document.querySelector("form");
 const formPopup = document.getElementById("form-popup");
 const formContainer = document.getElementById("form-container");
 const buttonContainer = document.getElementById("button-container");
@@ -41,10 +41,12 @@ const projectShow = document.getElementById("project-show");
 const contentRight = document.getElementById("content-right");
 const rightTitle = document.getElementById("right-title");
 const footer = document.getElementById("footer");
+const allProjects = [];
 
 export {
   wrapper,
   header,
+  form,
   formPopup,
   formContainer,
   buttonContainer,
@@ -83,5 +85,6 @@ export {
   projectShow,
   contentRight,
   rightTitle,
-  footer
+  footer,
+  allProjects
 };
