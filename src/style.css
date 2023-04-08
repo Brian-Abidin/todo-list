@@ -322,7 +322,18 @@ input[type="text"] {
 .content-right-header {
   grid-area: header;
   background-color: bisque;
-  height: 50px;
+}
+
+.content-right-header,
+.content-right-add,
+.content-right-date,
+.content-right-description,
+.content-right-priority,
+.content-right-tags,
+.content-right-task {
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
 }
 
 .content-right-task {
@@ -367,6 +378,7 @@ input[type="text"] {
     "tags date"
     "description description"
     "add add";
+  gap: 5px;
 }
 
 .footer {
