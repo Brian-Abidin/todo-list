@@ -1,6 +1,6 @@
 import { parseISO } from "date-fns";
 import format from "date-fns/format";
-import { allProjects, contentLeft } from "./domElements";
+import { allProjects, contentLeft, btnTag } from "./domElements";
 
 function displayProject(name, urgency, date) {
   const projectOrder = allProjects.length;
@@ -37,9 +37,21 @@ function displayProject(name, urgency, date) {
   projectBtn.textContent = ">";
 }
 
+// function addingTag() {
+//   const tagValue = document.getElementById("add-tag").value;
+//   document.getElementById("add-tag").value = "";
+//   console.log("working Tag");
+//   return {
+//     tagValue
+//   };
+// }
+
+// btnTag.addEventListener("click", addingTag());
+
 export default function createProject(name, desc, urgency, date, time) {
   const newDate = parseISO(date);
   const dateFormatted = format(newDate, "M/dd/yy");
+  const tagValue = document.getElementById("add-tag").value;
   console.log(dateFormatted);
 
   const project = {
@@ -52,6 +64,7 @@ export default function createProject(name, desc, urgency, date, time) {
     tags: [],
     tasks: []
   };
+  project.tags.push(tagValue);
   allProjects.push(project);
   displayProject(project.name, project.priority, project.dueDate);
   console.log(allProjects);
