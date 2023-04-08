@@ -171,24 +171,6 @@ input[type="text"] {
   /* background-image: linear-gradient(rgb(255, 174, 0), rgb(2, 175, 255)); */
 }
 
-.bottom_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
-
-.create-form {
-  margin-right: 4vw;
-  height: 20px;
-  width: fit-content;
-  margin-top: 10px;
-  border-style: none;
-  font-size: 18px;
-  background-color: transparent;
-  cursor: grab;
-}
-
 .c_Bottom {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -245,6 +227,7 @@ input[type="text"] {
   margin: 10px;
   max-height: 550px;
   overflow-y: auto;
+  border: 1px solid black;
 }
 
 .cleft {
@@ -258,6 +241,25 @@ input[type="text"] {
   gap: 10px;
   max-height: 550px;
   overflow-y: auto;
+  min-width: 260px;
+}
+
+.bottom_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.create-form {
+  margin-right: 4vw;
+  height: 20px;
+  width: fit-content;
+  margin-top: 10px;
+  border-style: none;
+  font-size: 18px;
+  background-color: transparent;
+  cursor: grab;
 }
 
 .bottom_title {
@@ -320,7 +322,6 @@ input[type="text"] {
 
 .content-right-header {
   grid-area: header;
-  background-color: bisque;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -354,15 +355,13 @@ input[type="text"] {
 .content-right-priority,
 .content-right-tags,
 .content-right-date {
-  font-size: calc(1em + 0.5vw);
+  font-size: calc(1em + 0.2vw);
   justify-content: center;
-  border: 2px solid black;
 }
 
 .content-right-task {
   grid-area: task;
-  background-color: rgb(0, 255, 191);
-  font-size: calc(1em + 1.5vw);
+  font-size: calc(1em + 1vw);
   justify-content: left;
   font-weight: 700;
   border-bottom: 2px solid black;
@@ -374,24 +373,29 @@ input[type="text"] {
 
 .content-right-priority {
   grid-area: priority;
-  background-color: lawngreen;
   flex-direction: column;
+  background-color: red;
+  border: 2px solid black;
 }
 
 .content-right-tags {
   grid-area: tags;
-  background-color: khaki;
+  border-bottom: 2px solid black;
 }
 
 .content-right-date {
   grid-area: date;
-  background-color: slateblue;
   flex-direction: column;
+  border: 2px solid black;
+}
+
+.due-date-text {
+  font-weight: 700;
 }
 
 .content-right-description {
   grid-area: description;
-  background-color: firebrick;
+  border-bottom: 2px solid black;
 }
 
 .description-text {
@@ -400,12 +404,18 @@ input[type="text"] {
 
 .content-right-add {
   grid-area: add;
-  background-color: hotpink;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  gap: 10px;
+}
+
+.add-task,
+.add-checklist {
+  border-style: none;
+  background-color: transparent;
 }
 
 .content-right-container {
-  height: 100%;
-  width: 100%;
   display: grid;
   grid-template-columns: 1fr 0.5fr;
   grid-template-rows: 50px repeat(3, auto) 50px;
