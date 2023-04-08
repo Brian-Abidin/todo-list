@@ -322,9 +322,20 @@ input[type="text"] {
 .content-right-header {
   grid-area: header;
   background-color: bisque;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.content-right-header,
+.content-right-delete,
+.content-right-edit {
+  height: 25px;
+  width: 40px;
+  margin: 5px;
+  border-style: none;
+  background-color: transparent;
+}
+
 .content-right-add,
 .content-right-date,
 .content-right-description,
