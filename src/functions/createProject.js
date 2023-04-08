@@ -29,20 +29,61 @@ function displayProjectRight(name, desc, urgency, date, time, tags) {
   dueDateText.textContent = date;
   dueTimeText.textContent = time;
 
-  const tag = document.createElement("div");
-  const tagName = document.createElement("div");
-  const removeTag = document.createElement("button");
+  // const tag = document.createElement("div");
+  // const tagName = document.createElement("div");
+  // const removeTag = document.createElement("button");
 
-  tag.classList.add("tag1");
-  tagName.classList.add("tag-name");
-  removeTag.classList.add("remove-tag");
+  // tag.classList.add("tag1");
+  // tagName.classList.add("tag-name");
+  // removeTag.classList.add("remove-tag");
 
-  displayTags.appendChild(tag);
-  tag.appendChild(tagName);
-  tag.appendChild(removeTag);
+  // displayTags.appendChild(tag);
+  // tag.appendChild(tagName);
+  // tag.appendChild(removeTag);
 
-  tagName.textContent = tags;
-  removeTag.textContent = "-";
+  // tagName.textContent = tags;
+  // removeTag.textContent = "-";
+}
+
+function createTags(tags) {
+  for (let i = 0; i < tags.length; i += 1) {
+    const tag = document.createElement("div");
+    const tagName = document.createElement("div");
+    const removeTag = document.createElement("button");
+
+    tag.classList.add("tag1");
+    tagName.classList.add("tag-name");
+    removeTag.classList.add("remove-tag");
+
+    displayTags.appendChild(tag);
+    tag.appendChild(tagName);
+    tag.appendChild(removeTag);
+
+    tagName.textContent = tags[i];
+    removeTag.textContent = "-";
+  }
+}
+
+function displayOnly(name, desc, urgency, date, time) {
+  displayTaskName.textContent = name;
+  priorityLevel.textContent = urgency;
+  rightDescription.textContent = desc;
+  dueDateText.textContent = date;
+  dueTimeText.textContent = time;
+
+  // const tag = document.createElement("div");
+  // const tagName = document.createElement("div");
+  // const removeTag = document.createElement("button");
+
+  // tag.classList.add("tag1");
+  // tagName.classList.add("tag-name");
+  // removeTag.classList.add("remove-tag");
+
+  // displayTags.appendChild(tag);
+  // tag.appendChild(tagName);
+  // tag.appendChild(removeTag);
+
+  // removeTag.textContent = "-";
 }
 
 function displayProject(name, urgency, date) {
@@ -84,14 +125,17 @@ function displayProject(name, urgency, date) {
     if (allProjects.length !== 0) {
       projectBtn.addEventListener("click", (e) => {
         const thisProject = allProjects[e.target.id - 1];
+        displayTags.removeChild(displayTags.firstChild);
         console.log(thisProject);
-        displayProjectRight(
+        console.log(thisProject.tags[0]);
+        createTags(thisProject.tags);
+        displayOnly(
           thisProject.name,
           thisProject.description,
           thisProject.priority,
           thisProject.date,
-          thisProject.time,
-          thisProject.tags
+          thisProject.time
+          // thisProject.tags
         );
       });
     }
@@ -113,7 +157,7 @@ export default function createProject(name, desc, urgency, date, time) {
     priority: urgency,
     dueDate: dateFormatted,
     time,
-    tags: [],
+    tags: [tagValue],
     tasks: []
   };
   displayProjectRight(
@@ -124,7 +168,6 @@ export default function createProject(name, desc, urgency, date, time) {
     project.time,
     tagValue
   );
-  project.tags.push(tagValue);
   allProjects.push(project);
   displayProject(project.name, project.priority, project.dueDate);
   console.log(allProjects);
