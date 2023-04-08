@@ -241,7 +241,6 @@ input[type="text"] {
 }
 
 .cright {
-  background-color: blue;
   border-radius: 10px;
   margin: 10px;
   max-height: 550px;
@@ -325,6 +324,7 @@ input[type="text"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid black;
 }
 
 .content-right-delete,
@@ -334,27 +334,48 @@ input[type="text"] {
   margin: 5px;
   border-style: none;
   background-color: transparent;
+  font-size: large;
 }
 
 .content-right-add,
-.content-right-date,
 .content-right-description,
 .content-right-priority,
 .content-right-tags,
-.content-right-task {
-  border-radius: 5px;
-  height: 100%;
-  width: 100%;
+.content-right-task,
+.content-right-date {
+  height: auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+.content-right-add,
+.content-right-description,
+.content-right-priority,
+.content-right-tags,
+.content-right-date {
+  font-size: calc(1em + 0.5vw);
+  justify-content: center;
+  border: 2px solid black;
 }
 
 .content-right-task {
   grid-area: task;
   background-color: rgb(0, 255, 191);
+  font-size: calc(1em + 1.5vw);
+  justify-content: left;
+  font-weight: 700;
+  border-bottom: 2px solid black;
+}
+
+.display-task-name {
+  margin-left: 20px;
 }
 
 .content-right-priority {
   grid-area: priority;
   background-color: lawngreen;
+  flex-direction: column;
 }
 
 .content-right-tags {
@@ -365,11 +386,16 @@ input[type="text"] {
 .content-right-date {
   grid-area: date;
   background-color: slateblue;
+  flex-direction: column;
 }
 
 .content-right-description {
   grid-area: description;
   background-color: firebrick;
+}
+
+.description-text {
+  margin: 20px;
 }
 
 .content-right-add {
