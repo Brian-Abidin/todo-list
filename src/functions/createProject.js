@@ -1,6 +1,15 @@
 import { parseISO } from "date-fns";
 import format from "date-fns/format";
-import { allProjects, contentLeft, btnTag } from "./domElements";
+import {
+  allProjects,
+  contentLeft,
+  displayTags,
+  displayTaskName,
+  dueDateText,
+  dueTimeText,
+  priorityLevel,
+  rightDescription
+} from "./domElements";
 
 function displayProject(name, urgency, date) {
   const projectOrder = allProjects.length;
@@ -48,7 +57,31 @@ function displayProject(name, urgency, date) {
 
 // btnTag.addEventListener("click", addingTag());
 
+function displayProjectRight(name, desc, urgency, date, time, tags) {
+  displayTaskName.textContent = name;
+  priorityLevel.textContent = urgency;
+  rightDescription.textContent = desc;
+  dueDateText.textContent = date;
+  dueTimeText.textContent = time;
+
+  const tag = document.createElement("div");
+  const tagName = document.createElement("div");
+  const removeTag = document.createElement("button");
+
+  tag.classList.add("tag1");
+  tagName.classList.add("tag-name");
+  removeTag.classList.add("remove-tag");
+
+  displayTags.appendChild(tag);
+  tag.appendChild(tagName);
+  tag.appendChild(removeTag);
+
+  tagName.textContent = tags;
+  removeTag.textContent = "-";
+}
+
 export default function createProject(name, desc, urgency, date, time) {
+  const projectOrder = allProjects.length;
   const newDate = parseISO(date);
   const dateFormatted = format(newDate, "M/dd/yy");
   const tagValue = document.getElementById("add-tag").value;
@@ -56,6 +89,7 @@ export default function createProject(name, desc, urgency, date, time) {
 
   const project = {
     type: "project",
+    id: projectOrder,
     name,
     description: desc,
     priority: urgency,
@@ -64,6 +98,14 @@ export default function createProject(name, desc, urgency, date, time) {
     tags: [],
     tasks: []
   };
+  displayProjectRight(
+    project.name,
+    project.description,
+    project.priority,
+    project.dueDate,
+    project.time,
+    tagValue
+  );
   project.tags.push(tagValue);
   allProjects.push(project);
   displayProject(project.name, project.priority, project.dueDate);
