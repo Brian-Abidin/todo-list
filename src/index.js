@@ -121,8 +121,6 @@ console.log(result);
   const currentHour = +format(new Date(), "k");
   switch (true) {
     case currentHour >= 20 || currentHour < 6:
-      // change dom text.content = moon
-      // change dom text.content = Good Evening
       greeting.textContent = "Good Evening, User";
       contentTop.style.backgroundImage =
         "linear-gradient(rgb(51, 41, 41), rgb(0, 34, 128))";
@@ -130,8 +128,6 @@ console.log(result);
       console.log("moon");
       break;
     case currentHour >= 6 && currentHour < 12:
-      // change dom text.content = sunrise
-      // change dom text.content = Good Morning
       greeting.textContent = "Good Morning, User";
       weatherIcon.src = "../src/images/sun.png";
       contentTop.style.backgroundImage =
@@ -139,8 +135,6 @@ console.log(result);
       console.log("sunrise");
       break;
     case currentHour >= 12 && currentHour < 19:
-      // change dom text.content = sun
-      // change dom text.content = Good Afternoon
       greeting.textContent = "Good Afternoon, User";
       weatherIcon.src = "../src/images/sunrise.png";
       contentTop.style.backgroundImage =
@@ -148,8 +142,6 @@ console.log(result);
       console.log("sun");
       break;
     case currentHour >= 19 && currentHour < 20:
-      // change dom text.conent = sunset
-      // change dom text.content = Good Evening
       greeting.textContent = "Good Evening, User";
       weatherIcon.src = "../src/images/moon.png";
       contentTop.style.backgroundImage =
