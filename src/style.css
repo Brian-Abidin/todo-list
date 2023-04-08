@@ -341,7 +341,6 @@ input[type="text"] {
 .content-right-add,
 .content-right-description,
 .content-right-priority,
-.content-right-tags,
 .content-right-task,
 .content-right-date {
   height: auto;
@@ -375,18 +374,54 @@ input[type="text"] {
   grid-area: priority;
   flex-direction: column;
   background-color: red;
-  border: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
 .content-right-tags {
   grid-area: tags;
   border-bottom: 2px solid black;
+  display: flex;
+  max-height: 108px;
+  overflow-y: auto;
+  justify-content: left;
+}
+
+.display-tags {
+  display: flex;
+  justify-content: left;
+  margin-left: 20px;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+
+.tag1 {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  height: 25px;
+}
+
+.tag-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
+.remove-tag {
+  background-color: transparent;
+  border-style: none;
+  cursor: grab;
+  color: red;
+  font-size: 1.1em;
 }
 
 .content-right-date {
   grid-area: date;
   flex-direction: column;
   border: 2px solid black;
+  max-height: 108px;
+  min-width: 85px;
 }
 
 .due-date-text {
@@ -416,6 +451,8 @@ input[type="text"] {
 }
 
 .content-right-container {
+  height: auto;
+  width: auto;
   display: grid;
   grid-template-columns: 1fr 0.5fr;
   grid-template-rows: 50px repeat(3, auto) 50px;
