@@ -122,7 +122,7 @@ input[type="text"] {
   grid-template-columns: repeat(2, 220px);
 }
 
-.btnTag {
+/* .btnTag {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -135,7 +135,7 @@ input[type="text"] {
   justify-content: center;
   align-items: center;
   cursor: grab;
-}
+} */
 
 #add-tag,
 #description {
@@ -320,7 +320,7 @@ input[type="text"] {
   border-radius: 10px;
 }
 
-.content-right-header {
+.right-header {
   grid-area: header;
   display: flex;
   justify-content: space-between;
@@ -328,8 +328,8 @@ input[type="text"] {
   border-bottom: 2px solid black;
 }
 
-.content-right-delete,
-.content-right-edit {
+.right-delete,
+.right-edit {
   height: 25px;
   width: 40px;
   margin: 5px;
@@ -338,27 +338,27 @@ input[type="text"] {
   font-size: large;
 }
 
-.content-right-add,
-.content-right-description,
-.content-right-priority,
-.content-right-task,
-.content-right-date {
+.right-add,
+.right-description,
+.right-priority,
+.right-task,
+.right-date {
   height: auto;
   width: auto;
   display: flex;
   align-items: center;
 }
 
-.content-right-add,
-.content-right-description,
-.content-right-priority,
-.content-right-tags,
-.content-right-date {
+.right-add,
+.right-description,
+.right-priority,
+.right-tags,
+.right-date {
   font-size: calc(1em + 0.2vw);
   justify-content: center;
 }
 
-.content-right-task {
+.right-task {
   grid-area: task;
   font-size: calc(1em + 1vw);
   justify-content: left;
@@ -370,14 +370,14 @@ input[type="text"] {
   margin-left: 20px;
 }
 
-.content-right-priority {
+.right-priority {
   grid-area: priority;
   flex-direction: column;
   background-color: red;
   border-bottom: 2px solid black;
 }
 
-.content-right-tags {
+.right-tags {
   grid-area: tags;
   border-bottom: 2px solid black;
   display: flex;
@@ -416,7 +416,7 @@ input[type="text"] {
   font-size: 1.1em;
 }
 
-.content-right-date {
+.right-date {
   grid-area: date;
   flex-direction: column;
   border: 2px solid black;
@@ -424,11 +424,12 @@ input[type="text"] {
   min-width: 85px;
 }
 
+.due-time-text,
 .due-date-text {
   font-weight: 700;
 }
 
-.content-right-description {
+.right-description {
   grid-area: description;
   border-bottom: 2px solid black;
 }
@@ -437,24 +438,23 @@ input[type="text"] {
   margin: 20px;
 }
 
-.content-right-add {
+.right-add {
   grid-area: add;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   gap: 10px;
 }
 
-.add-task,
+.add-notes,
 .add-checklist {
   border-style: none;
   background-color: transparent;
 }
 
 .new-notes {
-  grid-area: newtask;
+  grid-area: notes;
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
   border: 2px solid black;
 }
 
@@ -464,10 +464,9 @@ input[type="text"] {
 
 .new-checklist {
   grid-area: checklist;
-  margin-left: 20px;
 }
 
-.content-right-container {
+.right-container {
   height: auto;
   width: auto;
   display: grid;
@@ -478,16 +477,15 @@ input[type="text"] {
     "task priority"
     "tags date"
     "description description"
-    "newtask checklist"
+    "notes checklist"
     "add add";
   gap: 5px;
 }
 
-.new-task,
+.new-notes,
 .new-checklist {
   width: 100%;
   height: 100%;
-  background-color: aquamarine;
 }
 
 .footer {
