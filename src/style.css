@@ -450,19 +450,44 @@ input[type="text"] {
   background-color: transparent;
 }
 
+.new-notes {
+  grid-area: newtask;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  border: 2px solid black;
+}
+
+.new-task-name {
+  font-size: calc(1em + 0.2vw);
+}
+
+.new-checklist {
+  grid-area: checklist;
+  margin-left: 20px;
+}
+
 .content-right-container {
   height: auto;
   width: auto;
   display: grid;
   grid-template-columns: 1fr 0.5fr;
-  grid-template-rows: 50px repeat(3, auto) 50px;
+  grid-template-rows: 50px repeat(auto-fit, auto) 50px;
   grid-template-areas:
     "header header"
     "task priority"
     "tags date"
     "description description"
+    "newtask checklist"
     "add add";
   gap: 5px;
+}
+
+.new-task,
+.new-checklist {
+  width: 100%;
+  height: 100%;
+  background-color: aquamarine;
 }
 
 .footer {
