@@ -36,7 +36,6 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  /* bring your own prefixes */
   transform: translate(-50%, -50%);
   width: 500px;
   height: auto;
@@ -164,13 +163,12 @@ input[type="text"] {
 }
 
 .c_Top {
-  background-color: aqua;
   height: 160px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   display: grid;
   grid-template-columns: auto 1fr auto;
-  background-image: linear-gradient(rgb(51, 41, 41), rgb(0, 34, 128));
+  /* background-image: linear-gradient(rgb(255, 174, 0), rgb(2, 175, 255)); */
 }
 
 .bottom_header {
@@ -180,11 +178,15 @@ input[type="text"] {
   margin-bottom: 5px;
 }
 
-.createForm {
+.create-form {
   margin-right: 4vw;
   height: 20px;
-  width: 20px;
+  width: fit-content;
   margin-top: 10px;
+  border-style: none;
+  font-size: 18px;
+  background-color: transparent;
+  cursor: grab;
 }
 
 .c_Bottom {
@@ -216,7 +218,7 @@ input[type="text"] {
   font-size: calc(1.5rem + 1vw);
   color: white;
   margin-left: 10px;
-  text-shadow: 4px 4px black;
+  text-shadow: 2px 2px black;
 }
 
 .date {
@@ -242,6 +244,7 @@ input[type="text"] {
   background-color: blue;
   border-radius: 10px;
   margin: 10px;
+  overflow-y: auto;
 }
 
 .cleft {
@@ -254,7 +257,7 @@ input[type="text"] {
   flex-direction: column;
   gap: 10px;
   max-height: 550px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .bottom_title {
@@ -295,6 +298,7 @@ input[type="text"] {
 
 .project-duedate {
   margin-right: 10px;
+  font-weight: 700;
 }
 
 .project-button {
@@ -312,6 +316,66 @@ input[type="text"] {
   color: rgb(255, 255, 255);
   background-color: rgb(9, 133, 248);
   border-radius: 10px;
+}
+
+.content-right-header {
+  grid-area: header;
+  background-color: bisque;
+  height: 50px;
+}
+
+.content-right-task {
+  grid-area: task;
+  background-color: rgb(0, 255, 191);
+}
+
+.content-right-priority {
+  grid-area: priority;
+  background-color: lawngreen;
+}
+
+.content-right-tags {
+  grid-area: tags;
+  background-color: khaki;
+}
+
+.content-right-date {
+  grid-area: date;
+  background-color: slateblue;
+}
+
+.content-right-description {
+  grid-area: description;
+  background-color: firebrick;
+}
+
+.content-right-add {
+  grid-area: add;
+  background-color: hotpink;
+}
+
+.content-right-task,
+.content-right-tags,
+.content-right-priority,
+.content-right-date,
+.content-right-description,
+.content-right-add {
+  height: 100%;
+  width: 100%;
+}
+
+.content-right-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header"
+    "task priority"
+    "tags date"
+    "description description"
+    "add add";
 }
 
 .footer {
