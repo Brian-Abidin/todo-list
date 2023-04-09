@@ -228,6 +228,7 @@ input[type="text"] {
   max-height: 550px;
   overflow-y: auto;
   border: 1px solid black;
+  background-color: aqua;
 }
 
 .cleft {
@@ -338,19 +339,27 @@ input[type="text"] {
   font-size: large;
 }
 
+/* .right-task,
 .right-add,
 .right-description,
+.description-text,
 .right-priority,
-.right-task,
+.right-tags,
 .right-date {
-  height: auto;
-  width: auto;
+  display: inline-block;
+  max-width: 1820px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+} */
+
+.right-add,
+.right-priority,
+.right-date {
   display: flex;
   align-items: center;
 }
 
 .right-add,
-.right-description,
 .right-priority,
 .right-tags,
 .right-date {
@@ -361,13 +370,13 @@ input[type="text"] {
 .right-task {
   grid-area: task;
   font-size: calc(1em + 1vw);
-  justify-content: left;
   font-weight: 700;
   border-bottom: 2px solid black;
-}
-
-.display-task-name {
-  margin-left: 20px;
+  overflow-wrap: break-word;
+  display: block;
+  /* max-width: 1080px; */
+  width: 100%;
+  height: 100%;
 }
 
 .right-priority {
@@ -375,21 +384,23 @@ input[type="text"] {
   flex-direction: column;
   background-color: red;
   border-bottom: 2px solid black;
+  height: 100%;
+  width: 100%;
 }
 
 .right-tags {
   grid-area: tags;
   border-bottom: 2px solid black;
   display: flex;
-  max-height: 108px;
-  overflow-y: auto;
+  /* max-height: 108px; */
+  /* overflow-y: auto; */
   justify-content: left;
 }
 
 .display-tags {
   display: flex;
   justify-content: left;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   flex-wrap: wrap;
   gap: 1px;
 }
@@ -420,8 +431,8 @@ input[type="text"] {
   grid-area: date;
   flex-direction: column;
   border: 2px solid black;
-  max-height: 108px;
-  min-width: 85px;
+  /* max-height: 108px;
+  min-width: 85px; */
 }
 
 .due-time-text,
@@ -432,10 +443,8 @@ input[type="text"] {
 .right-description {
   grid-area: description;
   border-bottom: 2px solid black;
-}
-
-.description-text {
-  margin: 20px;
+  overflow-wrap: break-word;
+  height: 100%;
 }
 
 .right-add {
@@ -467,11 +476,11 @@ input[type="text"] {
 }
 
 .right-container {
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 0.5fr;
-  grid-template-rows: 50px repeat(auto-fit, auto) 50px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 50px repeat(2, auto) 1fr min-content 50px;
   grid-template-areas:
     "header header"
     "task priority"
@@ -480,6 +489,7 @@ input[type="text"] {
     "notes checklist"
     "add add";
   gap: 5px;
+  background-color: blueviolet;
 }
 
 .new-notes,
