@@ -18,31 +18,31 @@
                 <button type="submit" id="btn-submit">+</button>
               </div>
               <div class="formContent" id="form-content">
-                <input type="text" id="task-name" name="taskName" placeholder="Task Name">
+                <input type="text" id="task-name" name="taskName" placeholder="Task Name" required>
                 <div class="formBottom" id="form-bottom">
                   <div class="formLeft" id="form-left">
                     <div class="tag_container" id="tag-container">
                       <textarea name="addTag" id="add-tag" cols="50" rows="3" placeholder="Tag..." maxlength="20"></textarea>
                     </div>
-                    <textarea name="description" id="description" cols="50" rows="8" placeholder="Description..."></textarea>
+                    <textarea name="description" id="description" cols="50" rows="8" placeholder="Description..." required></textarea>
                   </div>
                   <div class="formRight" id="form-right">
                     <label for="dueDate">Due Date:</label>
-                    <input type="date" id="due-date" name="due-date" min="2000-01-01">
+                    <input type="date" id="due-date" name="due-date" min="2000-01-01" required>
                     <label for="dueTime">Time:</label>
                     <input type="time" id="due-time" name="dueTime">
                     <fieldset>
                       <legend>Priority level:</legend>
                       <div>
-                        <input type="radio" id="low" name="priority" value="low">
+                        <input type="radio" id="low" name="priority" value="low" required>
                         <label for="low">Low</label>
                       </div>
                       <div>
-                        <input type="radio" id="medium" name="priority" value="medium" />
+                        <input type="radio" id="medium" name="priority" value="medium" required/>
                         <label for="medium">Medium</label>
                       </div>
                       <div>
-                        <input type="radio" id="high" name="priority" value="high" />
+                        <input type="radio" id="high" name="priority" value="high" required/>
                         <label for="high">High</label>
                       </div>
                     </fieldset>                    
