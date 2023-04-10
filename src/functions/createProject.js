@@ -9,6 +9,7 @@ import {
   dueDateText,
   dueTimeText,
   priorityLevel,
+  rightDelete,
   rightDescription
 } from "./domElements";
 
@@ -109,7 +110,7 @@ function displayProject(name, urgency, date) {
     priority.style.backgroundColor = "red";
   }
 
-  showProject.setAttribute("id", projectOrder);
+  showProject.setAttribute("id", `project${projectOrder}`);
   projectBtn.setAttribute("id", projectOrder);
 
   contentLeft.appendChild(showProject);
@@ -127,9 +128,12 @@ function displayProject(name, urgency, date) {
       projectBtn.addEventListener("click", (e) => {
         const thisProject = allProjects[e.target.id - 1];
         contentRight.style.display = "block";
-        displayTags.removeChild(displayTags.firstChild);
+        rightDelete.setAttribute("id", projectOrder);
+        while (displayTags.firstChild) {
+          displayTags.removeChild(displayTags.firstChild);
+        }
         console.log(thisProject);
-        console.log(thisProject.tags[0]);
+        console.log(allProjects);
         createTags(thisProject.tags);
         displayOnly(
           thisProject.name,
@@ -159,7 +163,7 @@ export default function createProject(name, desc, urgency, date, time) {
     priority: urgency,
     dueDate: dateFormatted,
     time,
-    tags: [tagValue],
+    tags: tagValue,
     tasks: []
   };
   // displayProjectRight(
@@ -174,3 +178,15 @@ export default function createProject(name, desc, urgency, date, time) {
   displayProject(project.name, project.priority, project.dueDate);
   console.log(allProjects);
 }
+
+(function checkDelete() {
+  rightDelete.addEventListener("click", (e) => {
+    console.log(e.target.id);
+    const projectId = e.target.id;
+    const element = document.getElementById(`project${projectId}`);
+    const arrayIndex = allProjects.indexOf(projectId);
+    element.remove();
+    allProjects.splice(arrayIndex, 1);
+    contentRight.style.display = "none";
+  });
+})();
