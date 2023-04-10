@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import { high, low, medium } from "./domElements";
 import createProject from "./createProject";
 
@@ -9,6 +10,13 @@ export default function addValues() {
   const dateValue = document.getElementById("due-date").value;
   const tagValue = document.getElementById("add-tag").value;
   let timeValue = document.getElementById("due-time").value;
+
+  // fomatting time value
+  const combinedDate = `${dateValue} ${timeValue}`;
+  const timeFormatted = new Date(combinedDate);
+  const newTime = format(timeFormatted, "h:m a");
+  console.log(newTime);
+
   if (low.checked) {
     urgency = "low";
   } else if (medium.checked) {
@@ -26,7 +34,7 @@ export default function addValues() {
     descriptionValue,
     urgency,
     dateValue,
-    timeValue,
+    newTime,
     tagValue
   );
   createProject(
@@ -34,7 +42,7 @@ export default function addValues() {
     descriptionValue,
     urgency,
     dateValue,
-    timeValue,
+    newTime,
     tagValue
   );
 }
