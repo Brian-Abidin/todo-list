@@ -11,7 +11,8 @@ import {
   allProjects,
   greeting,
   weatherIcon,
-  contentTop
+  contentTop,
+  project
 } from "./functions/domElements";
 import addValues from "./functions/addValue";
 /* 
@@ -82,14 +83,14 @@ function addChecklist(title) {
   // DOM element function that adds the checklist box
 }
 
-function addTag(title) {
-  const tag = {
-    type: "tag",
-    title
-  };
-  // "allprojects[0]" is a place holder
-  allProjects[0].tags.push(tag);
-}
+// function addTag(title) {
+//   const tag = {
+//     type: "tag",
+//     title
+//   };
+//   // "allprojects[0]" is a place holder
+//   allProjects[0].tags.push(tag);
+// }
 
 // form that can be written
 // const newtask = addProject("newtask", "plans out a plan", "green", "11:59");
@@ -170,11 +171,11 @@ formClose.addEventListener("click", () => {
 
 console.log(resultFormatted);
 
-function helloWorld(event) {
+function submitForm(event) {
   event.preventDefault();
   addValues();
   form.reset();
   closeTheForm();
 }
 
-form.addEventListener("submit", helloWorld);
+form.addEventListener("submit", submitForm);
