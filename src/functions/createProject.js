@@ -49,20 +49,24 @@ import {
 
 function createTags(tags) {
   for (let i = 0; i < tags.length; i += 1) {
-    const tag = document.createElement("div");
-    const tagName = document.createElement("div");
-    const removeTag = document.createElement("button");
+    if (tags[0] === "") {
+      // do nothing
+    } else {
+      const tag = document.createElement("div");
+      const tagName = document.createElement("div");
+      const removeTag = document.createElement("button");
 
-    tag.classList.add("tag1");
-    tagName.classList.add("tag-name");
-    removeTag.classList.add("remove-tag");
+      tag.classList.add("tag1");
+      tagName.classList.add("tag-name");
+      removeTag.classList.add("remove-tag");
 
-    displayTags.appendChild(tag);
-    tag.appendChild(tagName);
-    tag.appendChild(removeTag);
+      displayTags.appendChild(tag);
+      tag.appendChild(tagName);
+      tag.appendChild(removeTag);
 
-    tagName.textContent = tags[i];
-    removeTag.textContent = "-";
+      tagName.textContent = tags[i];
+      removeTag.textContent = "-";
+    }
   }
 }
 
@@ -128,7 +132,7 @@ function displayProject(name, urgency, date) {
       projectBtn.addEventListener("click", (e) => {
         const thisProject = allProjects[e.target.id - 1];
         contentRight.style.display = "block";
-        rightDelete.setAttribute("id", projectOrder);
+        rightDelete.setAttribute("id", e.target.id);
         while (displayTags.firstChild) {
           displayTags.removeChild(displayTags.firstChild);
         }
@@ -163,7 +167,7 @@ export default function createProject(name, desc, urgency, date, time) {
     priority: urgency,
     dueDate: dateFormatted,
     time,
-    tags: tagValue,
+    tags: [tagValue],
     tasks: []
   };
   // displayProjectRight(
@@ -179,14 +183,29 @@ export default function createProject(name, desc, urgency, date, time) {
   console.log(allProjects);
 }
 
+function updateProjectIds() {
+  let counter = 1;
+  for (let i = 0; i < allProjects.length; i += 1) {
+    const displayBtnClass = document.getElementsByClassName("project-button");
+    const projectClass = document.getElementsByClassName("project");
+    allProjects[i].id = i;
+    displayBtnClass[i].id = counter;
+    projectClass[i].id = `project${counter}`;
+    counter += 1;
+    console.log(counter);
+  }
+}
+
 (function checkDelete() {
   rightDelete.addEventListener("click", (e) => {
     console.log(e.target.id);
-    const projectId = e.target.id;
+    const projectId = Number(e.target.id);
+    const projectIndex = projectId - 1;
     const element = document.getElementById(`project${projectId}`);
-    const arrayIndex = allProjects.indexOf(projectId);
+    console.log("check Delete", projectIndex);
+    allProjects.splice(projectIndex, 1);
     element.remove();
-    allProjects.splice(arrayIndex, 1);
     contentRight.style.display = "none";
+    updateProjectIds();
   });
 })();
