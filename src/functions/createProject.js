@@ -75,6 +75,7 @@ function displayOnly(name, desc, urgency, date, time) {
   displayTaskName.textContent = name;
   priorityLevel.textContent = urgency;
   rightDescription.textContent = desc;
+  console.log(date);
   dueDateText.textContent = date;
   dueTimeText.textContent = time;
 
@@ -141,7 +142,7 @@ function displayProject(name, urgency, date) {
   (function checkDislay() {
     if (allProjects.length !== 0) {
       projectBtn.addEventListener("click", (e) => {
-        const thisProject = allProjects[e.target.id - 1];
+        const thisProject = allProjects[Number(e.target.id) - 1];
         contentRight.style.display = "block";
         rightDelete.setAttribute("id", e.target.id);
         while (displayTags.firstChild) {
@@ -154,7 +155,7 @@ function displayProject(name, urgency, date) {
           thisProject.name,
           thisProject.description,
           thisProject.priority,
-          thisProject.date,
+          thisProject.dueDate,
           thisProject.time
         );
         checkPriority(thisProject.priority);
@@ -163,11 +164,10 @@ function displayProject(name, urgency, date) {
   })();
 }
 
-export default function createProject(name, desc, urgency, date, time) {
+export default function createProject(name, desc, urgency, date, time, tag) {
   const projectOrder = allProjects.length;
   const newDate = parseISO(date);
   const dateFormatted = format(newDate, "M/dd/yy");
-  const tagValue = document.getElementById("add-tag").value;
   console.log(dateFormatted);
 
   const project = {
@@ -178,7 +178,7 @@ export default function createProject(name, desc, urgency, date, time) {
     priority: urgency,
     dueDate: dateFormatted,
     time,
-    tags: [tagValue],
+    tags: [tag],
     tasks: []
   };
   // displayProjectRight(

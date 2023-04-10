@@ -7,7 +7,8 @@ export default function addValues() {
   let urgency = "";
   const descriptionValue = document.getElementById("description").value;
   const dateValue = document.getElementById("due-date").value;
-  const timeValue = document.getElementById("due-time").value;
+  const tagValue = document.getElementById("add-tag").value;
+  let timeValue = document.getElementById("due-time").value;
   if (low.checked) {
     urgency = "low";
   } else if (medium.checked) {
@@ -15,6 +16,25 @@ export default function addValues() {
   } else if (high.checked) {
     urgency = "high";
   }
-  console.log(taskValue, descriptionValue, urgency, dateValue, timeValue);
-  createProject(taskValue, descriptionValue, urgency, dateValue, timeValue);
+
+  if (timeValue === "") {
+    timeValue = "No Time";
+  }
+
+  console.log(
+    taskValue,
+    descriptionValue,
+    urgency,
+    dateValue,
+    timeValue,
+    tagValue
+  );
+  createProject(
+    taskValue,
+    descriptionValue,
+    urgency,
+    dateValue,
+    timeValue,
+    tagValue
+  );
 }
