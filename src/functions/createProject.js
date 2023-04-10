@@ -10,7 +10,8 @@ import {
   dueTimeText,
   priorityLevel,
   rightDelete,
-  rightDescription
+  rightDescription,
+  rightPriority
 } from "./domElements";
 
 // function addingTag() {
@@ -92,6 +93,16 @@ function displayOnly(name, desc, urgency, date, time) {
   // removeTag.textContent = "-";
 }
 
+function checkPriority(urgency) {
+  if (urgency === "low") {
+    rightPriority.style.backgroundColor = "green";
+  } else if (urgency === "medium") {
+    rightPriority.style.backgroundColor = "yellow";
+  } else if (urgency === "high") {
+    rightPriority.style.backgroundColor = "red";
+  }
+}
+
 function displayProject(name, urgency, date) {
   const projectOrder = allProjects.length;
   const showProject = document.createElement("div");
@@ -109,7 +120,7 @@ function displayProject(name, urgency, date) {
   if (urgency === "low") {
     priority.style.backgroundColor = "green";
   } else if (urgency === "medium") {
-    priority.style.backgroundColor = "orange";
+    priority.style.backgroundColor = "yellow";
   } else if (urgency === "high") {
     priority.style.backgroundColor = "red";
   }
@@ -145,8 +156,8 @@ function displayProject(name, urgency, date) {
           thisProject.priority,
           thisProject.date,
           thisProject.time
-          // thisProject.tags
         );
+        checkPriority(thisProject.priority);
       });
     }
   })();
