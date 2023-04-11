@@ -204,6 +204,14 @@ function updateProjectIds() {
     const displayBtnClass = document.getElementsByClassName("project-button");
     const editBtns = document.getElementsByClassName("right-edit");
     const projectClass = document.getElementsByClassName("project");
+    const titleClass = document.getElementsByClassName("project-title");
+    const dateClass = document.getElementsByClassName("project-duedate");
+    const priorityClass = document.getElementsByClassName("project-priority");
+
+    titleClass[i].id = `title${counter}`;
+    dateClass[i].id = `date${counter}`;
+    priorityClass[i].id = `priority${counter}`;
+
     allProjects[i].id = i;
     displayBtnClass[i].id = counter;
     editBtns[i].id = counter;
