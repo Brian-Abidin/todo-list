@@ -1,12 +1,11 @@
 import { format } from "date-fns";
 import {
-  formClose,
   allProjects,
   greeting,
   weatherIcon,
   contentTop
 } from "./functions/domElements";
-import closeTheForm from "./functions/openCloseForm";
+
 /* 
 To-do list; objects that are created 
 using factories or constructors/classes
@@ -145,9 +144,5 @@ console.log(result);
       console.log("welcomeIcon function broken");
   }
 })();
-
-formClose.addEventListener("click", () => {
-  closeTheForm();
-});
 
 console.log(resultFormatted);
