@@ -78,7 +78,7 @@ textarea {
   background-color: red;
 }
 
-#btn-submit {
+.btn-submit {
   font-size: xx-large;
   background-color: transparent;
   border-radius: 2px;
