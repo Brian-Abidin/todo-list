@@ -16,7 +16,10 @@ import {
   rightEdit,
   btnSubmit,
   createForm,
-  form
+  form,
+  low,
+  medium,
+  high
 } from "./domElements";
 
 // function addingTag() {
@@ -133,6 +136,9 @@ function displayProject(name, urgency, date) {
 
   showProject.setAttribute("id", `project${projectOrder}`);
   projectBtn.setAttribute("id", projectOrder);
+  title.setAttribute("id", `title${projectOrder}`);
+  dueDate.setAttribute("id", `date${projectOrder}`);
+  priority.setAttribute("id", `priority${projectOrder}`);
 
   contentLeft.appendChild(showProject);
   showProject.appendChild(priority);
@@ -222,20 +228,65 @@ function updateProjectIds() {
 })();
 
 export function updateProjectInfo(index) {
-  closeTheForm();
-  form.reset();
-  const thisProject = allProjects[Number(index) - 1];
-  const time = document.getElementById("due-time").value;
+  const arrayId = Number(index) - 1;
+  console.log(arrayId);
+  const thisProject = allProjects[arrayId];
+  let time = document.getElementById("due-time").value;
   const date = document.getElementById("due-date").value;
+  const name = document.getElementById("task-name").value;
+  const description = document.getElementById("description").value;
+  const tag = document.getElementById("add-tag").value;
+
+  console.log(tag);
+  console.log(thisProject);
+  console.log(time);
+  console.log(date);
 
   const combinedDate = `${date} ${time}`;
   const timeFormatted = new Date(combinedDate);
+  console.log(timeFormatted);
   const newTime = format(timeFormatted, "h:mm a");
 
-  thisProject.name = document.getElementById("task-name").value;
-  thisProject.tag = document.getElementById("add-tag").value;
-  thisProject.date = document.getElementById("due-date").value;
+  const newDate = parseISO(date);
+  const dateFormatted = format(newDate, "M/dd/yy");
+
+  thisProject.tags = [];
+  while (displayTags.firstChild) {
+    displayTags.removeChild(displayTags.firstChild);
+  }
+
+  thisProject.name = name;
+  thisProject.dueDate = dateFormatted;
   thisProject.time = newTime;
+  thisProject.description = description;
+
+  if (low.checked) {
+    thisProject.priority = "low";
+    document.getElementById(`priority${index}`).style.backgroundColor = "green";
+  } else if (medium.checked) {
+    thisProject.priority = "medium";
+    document.getElementById(`priority${index}`).style.backgroundColor =
+      "yellow";
+  } else if (high.checked) {
+    thisProject.priority = "high";
+    document.getElementById(`priority${index}`).style.backgroundColor = "red";
+  }
+
+  const urgency = thisProject.priority;
+  thisProject.tags.push(tag);
+  createTags(thisProject.tags);
+
+  document.getElementById(`title${index}`).textContent = thisProject.name;
+  document.getElementById(`date${index}`).textContent = dateFormatted;
+
+  if (time === "") {
+    time = "No Time";
+  }
+
+  displayOnly(name, description, urgency, dateFormatted, newTime);
+  checkPriority(urgency);
+  closeTheForm();
+  form.reset();
 }
 
 // (function editProject() {
