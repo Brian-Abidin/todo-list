@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { updateProjectInfo } from "./functions/createProject";
+import { fillInfo, updateProjectInfo } from "./functions/createProject";
 import {
   allProjects,
   greeting,
@@ -170,9 +170,11 @@ btnSubmit.addEventListener("click", (e) => {
 
 rightEdit.addEventListener("click", (e) => {
   const editBtnId = e.target.id;
-  btnSubmit.getAttribute("id", editBtnId);
+  console.log(editBtnId);
+  btnSubmit.setAttribute("id", editBtnId);
   btnSubmit.type = "button";
   openForm();
+  fillInfo();
   // console.log(btnSubmit.type);
   // console.log(editBtnId);
 });
