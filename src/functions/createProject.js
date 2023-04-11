@@ -15,7 +15,8 @@ import {
   rightPriority,
   rightEdit,
   btnSubmit,
-  createForm
+  createForm,
+  form
 } from "./domElements";
 
 // function addingTag() {
@@ -220,32 +221,34 @@ function updateProjectIds() {
   });
 })();
 
-// function updateProjectInfo(index) {
-//   closeTheForm();
-//   const thisProject = allProjects[Number(index) - 1];
-//   const combinedDate = `${document.getElementById("due-date").value} ${
-//     document.getElementById("due-time").value
-//   }`;
-//   const timeFormatted = new Date(combinedDate);
-//   const newTime = format(timeFormatted, "h:mm a");
+export function updateProjectInfo(index) {
+  closeTheForm();
+  form.reset();
+  const thisProject = allProjects[Number(index) - 1];
+  const time = document.getElementById("due-time").value;
+  const date = document.getElementById("due-date").value;
 
-//   thisProject.name = document.getElementById("task-name").value;
-//   thisProject.tag = document.getElementById("add-tag").value;
-//   thisProject.date = document.getElementById("due-date").value;
-//   thisProject.time = newTime;
-// }
+  const combinedDate = `${date} ${time}`;
+  const timeFormatted = new Date(combinedDate);
+  const newTime = format(timeFormatted, "h:mm a");
+
+  thisProject.name = document.getElementById("task-name").value;
+  thisProject.tag = document.getElementById("add-tag").value;
+  thisProject.date = document.getElementById("due-date").value;
+  thisProject.time = newTime;
+}
 
 // (function editProject() {
 //   rightEdit.addEventListener("click", (e) => {
 //     const editBtnId = e.target.id;
 //     openForm();
 //     btnSubmit.type = "button";
+//     console.log(btnSubmit.type);
 //     if (btnSubmit.type === "button") {
-//       btnSubmit.addEventListener("click", updateProjectIds(editBtnId));
+//       btnSubmit.addEventListener("click", updateProjectInfo(editBtnId));
 //     } else {
 //       console.log("This is a new project!");
 //     }
-//     updateProjectInfo(editBtnId);
 //     console.log(editBtnId);
 //   });
 // })();
