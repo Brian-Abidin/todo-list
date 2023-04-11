@@ -154,12 +154,6 @@ console.log(result);
   }
 })();
 
-createForm.addEventListener("click", () => {
-  formPopup.style.display = "block";
-  formContainer.style.display = "block";
-  console.log("1");
-});
-
 function closeTheForm() {
   formPopup.style.display = "none";
   formContainer.style.display = "none";
