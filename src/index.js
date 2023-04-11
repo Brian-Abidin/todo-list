@@ -1,10 +1,18 @@
 import { format } from "date-fns";
+import { updateProjectInfo } from "./functions/createProject";
 import {
   allProjects,
   greeting,
   weatherIcon,
-  contentTop
+  contentTop,
+  createForm,
+  formClose,
+  form,
+  btnSubmit,
+  rightEdit
 } from "./functions/domElements";
+import closeTheForm, { openForm } from "./functions/openCloseForm";
+import submitForm from "./functions/submitForm";
 
 /* 
 To-do list; objects that are created 
@@ -144,5 +152,29 @@ console.log(result);
       console.log("welcomeIcon function broken");
   }
 })();
+
+formClose.addEventListener("click", () => {
+  closeTheForm();
+});
+
+createForm.addEventListener("click", () => {
+  btnSubmit.type = "submit";
+  openForm();
+});
+
+form.addEventListener("submit", submitForm);
+
+btnSubmit.addEventListener("click", (e) => {
+  if (btnSubmit.type === "button") updateProjectInfo(e.target.id);
+});
+
+rightEdit.addEventListener("click", (e) => {
+  const editBtnId = e.target.id;
+  btnSubmit.getAttribute("id", editBtnId);
+  btnSubmit.type = "button";
+  openForm();
+  // console.log(btnSubmit.type);
+  // console.log(editBtnId);
+});
 
 console.log(resultFormatted);
