@@ -1,5 +1,6 @@
 import { parseISO } from "date-fns";
 import format from "date-fns/format";
+import closeTheForm, { openForm } from "./openCloseForm";
 import {
   allProjects,
   contentLeft,
@@ -15,7 +16,8 @@ import {
   createForm,
   formPopup,
   formContainer,
-  rightEdit
+  rightEdit,
+  btnSubmit
 } from "./domElements";
 
 // function addingTag() {
@@ -203,10 +205,11 @@ function updateProjectIds() {
   let counter = 1;
   for (let i = 0; i < allProjects.length; i += 1) {
     const displayBtnClass = document.getElementsByClassName("project-button");
-    const editBtns = document.getElementsByClassName("");
+    const editBtns = document.getElementsByClassName("right-edit");
     const projectClass = document.getElementsByClassName("project");
     allProjects[i].id = i;
     displayBtnClass[i].id = counter;
+    editBtns[i].id = counter;
     projectClass[i].id = `project${counter}`;
     counter += 1;
     console.log(counter);
@@ -227,18 +230,23 @@ function updateProjectIds() {
   });
 })();
 
-function openForm() {
-  formPopup.style.display = "block";
-  formContainer.style.display = "block";
-}
-
 createForm.addEventListener("click", () => {
   openForm();
   console.log("1");
 });
 
+function updateProjectInfo(index) {
+  closeTheForm();
+  allProjects[index].name = f;
+}
+
 (function editProject() {
-  rightEdit.addEventListener("click", () => {
+  rightEdit.addEventListener("click", (e) => {
+    const editBtnId = e.target.id;
     openForm();
+    btnSubmit.type = "button";
+    btnSubmit.addEventListener("click", updateProjectIds(editBtnId));
+    updateProjectInfo(editBtnId);
+    console.log(editBtnId);
   });
 })();
