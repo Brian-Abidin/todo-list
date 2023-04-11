@@ -37,16 +37,12 @@ export default function addValues() {
     newTime,
     tagValue
   );
-  if (btnSubmit.type === "submit") {
-    createProject(
-      taskValue,
-      descriptionValue,
-      urgency,
-      dateValue,
-      newTime,
-      tagValue
-    );
-  } else {
-    console.log(btnSubmit.type);
-  }
+  createProject(
+    taskValue,
+    descriptionValue,
+    urgency,
+    dateValue,
+    newTime,
+    tagValue
+  );
 }
