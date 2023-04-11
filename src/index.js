@@ -1,20 +1,12 @@
-import { toDate, format } from "date-fns";
+import { format } from "date-fns";
 import {
-  btnSubmit,
-  createForm,
-  form,
   formClose,
-  formContainer,
-  formPopup,
-  taskName,
-  taskValue,
   allProjects,
   greeting,
   weatherIcon,
-  contentTop,
-  project
+  contentTop
 } from "./functions/domElements";
-import addValues from "./functions/addValue";
+import closeTheForm from "./functions/openCloseForm";
 /* 
 To-do list; objects that are created 
 using factories or constructors/classes
@@ -154,22 +146,8 @@ console.log(result);
   }
 })();
 
-function closeTheForm() {
-  formPopup.style.display = "none";
-  formContainer.style.display = "none";
-}
-
 formClose.addEventListener("click", () => {
   closeTheForm();
 });
 
 console.log(resultFormatted);
-
-function submitForm(event) {
-  event.preventDefault();
-  addValues();
-  form.reset();
-  closeTheForm();
-}
-
-form.addEventListener("submit", submitForm);
