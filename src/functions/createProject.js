@@ -11,7 +11,11 @@ import {
   priorityLevel,
   rightDelete,
   rightDescription,
-  rightPriority
+  rightPriority,
+  createForm,
+  formPopup,
+  formContainer,
+  rightEdit
 } from "./domElements";
 
 // function addingTag() {
@@ -145,6 +149,7 @@ function displayProject(name, urgency, date) {
         const thisProject = allProjects[Number(e.target.id) - 1];
         contentRight.style.display = "block";
         rightDelete.setAttribute("id", e.target.id);
+        rightEdit.setAttribute("id", e.target.id);
         while (displayTags.firstChild) {
           displayTags.removeChild(displayTags.firstChild);
         }
@@ -198,6 +203,7 @@ function updateProjectIds() {
   let counter = 1;
   for (let i = 0; i < allProjects.length; i += 1) {
     const displayBtnClass = document.getElementsByClassName("project-button");
+    const editBtns = document.getElementsByClassName("");
     const projectClass = document.getElementsByClassName("project");
     allProjects[i].id = i;
     displayBtnClass[i].id = counter;
@@ -218,5 +224,21 @@ function updateProjectIds() {
     element.remove();
     contentRight.style.display = "none";
     updateProjectIds();
+  });
+})();
+
+function openForm() {
+  formPopup.style.display = "block";
+  formContainer.style.display = "block";
+}
+
+createForm.addEventListener("click", () => {
+  openForm();
+  console.log("1");
+});
+
+(function editProject() {
+  rightEdit.addEventListener("click", () => {
+    openForm();
   });
 })();
