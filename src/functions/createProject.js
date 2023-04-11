@@ -220,20 +220,20 @@ function updateProjectIds() {
   });
 })();
 
-function updateProjectInfo(index) {
-  closeTheForm();
-  const thisProject = allProjects[Number(index) - 1];
-  const combinedDate = `${document.getElementById("due-date").value} ${
-    document.getElementById("due-time").value
-  }`;
-  const timeFormatted = new Date(combinedDate);
-  const newTime = format(timeFormatted, "h:mm a");
+// function updateProjectInfo(index) {
+//   closeTheForm();
+//   const thisProject = allProjects[Number(index) - 1];
+//   const combinedDate = `${document.getElementById("due-date").value} ${
+//     document.getElementById("due-time").value
+//   }`;
+//   const timeFormatted = new Date(combinedDate);
+//   const newTime = format(timeFormatted, "h:mm a");
 
-  thisProject.name = document.getElementById("task-name").value;
-  thisProject.tag = document.getElementById("add-tag").value;
-  thisProject.date = document.getElementById("due-date").value;
-  thisProject.time = newTime;
-}
+//   thisProject.name = document.getElementById("task-name").value;
+//   thisProject.tag = document.getElementById("add-tag").value;
+//   thisProject.date = document.getElementById("due-date").value;
+//   thisProject.time = newTime;
+// }
 
 // (function editProject() {
 //   rightEdit.addEventListener("click", (e) => {
