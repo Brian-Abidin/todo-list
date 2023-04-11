@@ -13,11 +13,9 @@ import {
   rightDelete,
   rightDescription,
   rightPriority,
-  createForm,
-  formPopup,
-  formContainer,
   rightEdit,
-  btnSubmit
+  btnSubmit,
+  createForm
 } from "./domElements";
 
 // function addingTag() {
@@ -188,14 +186,6 @@ export default function createProject(name, desc, urgency, date, time, tag) {
     tags: [tag],
     tasks: []
   };
-  // displayProjectRight(
-  //   project.name,
-  //   project.description,
-  //   project.priority,
-  //   project.dueDate,
-  //   project.time,
-  //   tagValue
-  // );
   allProjects.push(project);
   displayProject(project.name, project.priority, project.dueDate);
   console.log(allProjects);
@@ -230,23 +220,32 @@ function updateProjectIds() {
   });
 })();
 
-createForm.addEventListener("click", () => {
-  openForm();
-  console.log("1");
-});
-
 function updateProjectInfo(index) {
   closeTheForm();
-  allProjects[index].name = f;
+  const thisProject = allProjects[Number(index) - 1];
+  const combinedDate = `${document.getElementById("due-date").value} ${
+    document.getElementById("due-time").value
+  }`;
+  const timeFormatted = new Date(combinedDate);
+  const newTime = format(timeFormatted, "h:mm a");
+
+  thisProject.name = document.getElementById("task-name").value;
+  thisProject.tag = document.getElementById("add-tag").value;
+  thisProject.date = document.getElementById("due-date").value;
+  thisProject.time = newTime;
 }
 
-(function editProject() {
-  rightEdit.addEventListener("click", (e) => {
-    const editBtnId = e.target.id;
-    openForm();
-    btnSubmit.type = "button";
-    btnSubmit.addEventListener("click", updateProjectIds(editBtnId));
-    updateProjectInfo(editBtnId);
-    console.log(editBtnId);
-  });
-})();
+// (function editProject() {
+//   rightEdit.addEventListener("click", (e) => {
+//     const editBtnId = e.target.id;
+//     openForm();
+//     btnSubmit.type = "button";
+//     if (btnSubmit.type === "button") {
+//       btnSubmit.addEventListener("click", updateProjectIds(editBtnId));
+//     } else {
+//       console.log("This is a new project!");
+//     }
+//     updateProjectInfo(editBtnId);
+//     console.log(editBtnId);
+//   });
+// })();
