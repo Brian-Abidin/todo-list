@@ -40,29 +40,6 @@ for (let i = Array.length - 1; i < Array.length; i += 1) {
   // code here adds task to array
 }
 
-// RemoveProject Function
-
-// create object
-// export default function createProject(name, desc, urgency, date, time) {
-//   const project = {
-//     type: "project",
-//     name,
-//     description: desc,
-//     priority: urgency,
-//     dueDate: date,
-//     time,
-//     tags: [],
-//     tasks: []
-//   };
-//   allProjects.push(project);
-// }
-
-// on click creates this object and pushes it into the array.
-
-// add a task to project
-// - add a task w/ description & due date, priority
-// - add a checklist w/ due date, priority
-
 // checks which project you are on and adds task from the project based on the array order
 function addTask(title, desc) {
   const task = {
@@ -81,37 +58,6 @@ function addChecklist(title) {
   allProjects[0].tasks.push(checkList);
   // DOM element function that adds the checklist box
 }
-
-// function addTag(title) {
-//   const tag = {
-//     type: "tag",
-//     title
-//   };
-//   // "allprojects[0]" is a place holder
-//   allProjects[0].tags.push(tag);
-// }
-
-// form that can be written
-// const newtask = addProject("newtask", "plans out a plan", "green", "11:59");
-// addTask("Buy a House", "Get enough money to buy an entire house");
-// addTask("Buy a Car", "Get enough money to buy an entire car");
-// addChecklist("Open Car");
-// Object.defineProperty(newtask, "tag", {
-//   value: "gaming",
-//   writable: false,
-//   enumerable: true
-// });
-// addTag("work");
-
-// addTaskProperty(newtask, "tag", "gaming");
-// addTaskProperty(newtask, "tag", "sports");
-// const objProps = Object.keys(newtask).length;
-
-// console.log(Object.keys(allProjects[0]).length);
-
-// for (const key in allProjects()[0]) {
-//   console.log(key);
-// }
 
 const result = new Date();
 const resultFormatted = format(result, "MM/dd/yyyy");
@@ -175,8 +121,6 @@ rightEdit.addEventListener("click", (e) => {
   btnSubmit.type = "button";
   openForm();
   fillInfo();
-  // console.log(btnSubmit.type);
-  // console.log(editBtnId);
 });
 
 console.log(resultFormatted);
