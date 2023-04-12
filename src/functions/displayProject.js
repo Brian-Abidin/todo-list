@@ -4,12 +4,12 @@ import {
   contentRight,
   rightDelete,
   rightEdit,
-  displayTags,
-  rightContainer
+  displayTags
 } from "./domElements";
 import createTags from "./createTags";
 import displayOnly from "./displayOnly";
 import checkPriority from "./checkPriority";
+import projectDone from "./projectDone";
 
 export default function displayProject(name, urgency, date) {
   const projectOrder = allProjects.length;
@@ -18,7 +18,10 @@ export default function displayProject(name, urgency, date) {
   const title = document.createElement("div");
   const dueDate = document.createElement("div");
   const projectBtn = document.createElement("button");
+  const finishBtn = document.createElement("input");
 
+  finishBtn.classList.add("finish-button");
+  finishBtn.type = "checkbox";
   showProject.classList.add("project");
   priority.classList.add("project-priority");
   title.classList.add("project-title");
@@ -38,9 +41,11 @@ export default function displayProject(name, urgency, date) {
   title.setAttribute("id", `title${projectOrder}`);
   dueDate.setAttribute("id", `date${projectOrder}`);
   priority.setAttribute("id", `priority${projectOrder}`);
+  finishBtn.setAttribute("id", `finish${projectOrder}`);
 
   contentLeft.appendChild(showProject);
   showProject.appendChild(priority);
+  showProject.appendChild(finishBtn);
   showProject.appendChild(title);
   showProject.appendChild(dueDate);
   showProject.appendChild(projectBtn);
@@ -54,7 +59,6 @@ export default function displayProject(name, urgency, date) {
       projectBtn.addEventListener("click", (e) => {
         const thisProject = allProjects[Number(e.target.id) - 1];
         contentRight.style.display = "block";
-        contentRight.style.backgroundColor = "Black";
         rightDelete.setAttribute("id", e.target.id);
         rightEdit.setAttribute("id", e.target.id);
         while (displayTags.firstChild) {
@@ -74,4 +78,10 @@ export default function displayProject(name, urgency, date) {
       });
     }
   })();
+  (function checkDone() {
+    finishBtn.addEventListener("change", (e) => {
+      projectDone(e.target.id);
+    });
+  })();
+  console.log(finishBtn);
 }
