@@ -8,11 +8,12 @@ export default function updateProjectIds() {
     const titleClass = document.getElementsByClassName("project-title");
     const dateClass = document.getElementsByClassName("project-duedate");
     const priorityClass = document.getElementsByClassName("project-priority");
+    const doneBtnClass = document.getElementsByClassName("finish-button");
 
     titleClass[i].id = `title${counter}`;
     dateClass[i].id = `date${counter}`;
     priorityClass[i].id = `priority${counter}`;
-
+    doneBtnClass[i].id = `finish${counter}`;
     projectClass[i].id = `project${counter}`;
     console.log(projectClass[i].id);
     allProjects[i].id = i;
