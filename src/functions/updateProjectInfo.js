@@ -36,7 +36,7 @@ export default function updateProjectInfo(index) {
   const newDate = parseISO(date);
   const dateFormatted = format(newDate, "M/dd/yy");
 
-  thisProject.tags = [];
+  thisProject.tags = "";
   while (displayTags.firstChild) {
     displayTags.removeChild(displayTags.firstChild);
   }
@@ -59,7 +59,7 @@ export default function updateProjectInfo(index) {
   }
 
   const urgency = thisProject.priority;
-  thisProject.tags.push(tag);
+  thisProject.tags = tag;
   createTags(thisProject.tags);
 
   document.getElementById(`title${index}`).textContent = thisProject.name;
