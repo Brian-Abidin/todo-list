@@ -123,7 +123,7 @@ export default function createProject(name, desc, urgency, date, time, tag) {
     priority: urgency,
     dueDate: dateFormatted,
     time,
-    tags: [tag],
+    tags: tag,
     tasks: []
   };
   allProjects.push(project);
