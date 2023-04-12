@@ -14,10 +14,11 @@ export default function updateProjectIds() {
     dateClass[i].id = `date${counter}`;
     priorityClass[i].id = `priority${counter}`;
 
+    projectClass[i].id = `project${counter}`;
+    console.log(projectClass[i].id);
     allProjects[i].id = i;
     displayBtnClass[i].id = counter;
-    editBtns[i].id = counter;
-    projectClass[i].id = `project${counter}`;
+    // editBtns[i].id = counter;
     counter += 1;
     console.log(counter);
   }
