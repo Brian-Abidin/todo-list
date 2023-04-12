@@ -4,7 +4,6 @@ import { low, medium, high, displayTags } from "./domElements";
 export default function fillInfo() {
   const name = document.getElementById("display-task-name").textContent;
   const priority = document.getElementById("priority-level").textContent;
-  //   const tagName = document.getElementsByClassName("tag-name")[0].textContent;
   const date = document.getElementById("due-date-text").textContent;
   const time = document.getElementById("due-time-text").textContent;
   const description = document.getElementById("right-description").textContent;

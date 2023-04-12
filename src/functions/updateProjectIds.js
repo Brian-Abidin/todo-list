@@ -4,7 +4,6 @@ export default function updateProjectIds() {
   let counter = 1;
   for (let i = 0; i < allProjects.length; i += 1) {
     const displayBtnClass = document.getElementsByClassName("project-button");
-    const editBtns = document.getElementsByClassName("right-edit");
     const projectClass = document.getElementsByClassName("project");
     const titleClass = document.getElementsByClassName("project-title");
     const dateClass = document.getElementsByClassName("project-duedate");
@@ -18,7 +17,6 @@ export default function updateProjectIds() {
     console.log(projectClass[i].id);
     allProjects[i].id = i;
     displayBtnClass[i].id = counter;
-    // editBtns[i].id = counter;
     counter += 1;
     console.log(counter);
   }
