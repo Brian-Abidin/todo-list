@@ -1,5 +1,5 @@
 import addValues from "./addValue";
-import { form } from "./domElements";
+import { allProjects, form } from "./domElements";
 import closeTheForm from "./openCloseForm";
 
 export default function submitForm(event) {
@@ -8,4 +8,5 @@ export default function submitForm(event) {
   addValues();
   form.reset();
   closeTheForm();
+  window.localStorage.setItem("projects", JSON.stringify(allProjects));
 }

@@ -73,4 +73,5 @@ export default function updateProjectInfo(index) {
   checkPriority(urgency);
   closeTheForm();
   form.reset();
+  window.localStorage.setItem("projects", JSON.stringify(allProjects));
 }

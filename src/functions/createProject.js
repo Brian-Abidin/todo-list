@@ -24,3 +24,20 @@ export default function createProject(name, desc, urgency, date, time, tag) {
   displayProject(project.name, project.priority, project.dueDate);
   console.log(allProjects);
 }
+
+export function getProjects(name, desc, urgency, date, time, tag) {
+  const projectOrder = allProjects.length;
+  const project = {
+    type: "project",
+    id: projectOrder,
+    name,
+    description: desc,
+    priority: urgency,
+    dueDate: date,
+    time,
+    tags: tag,
+    tasks: []
+  };
+  allProjects.push(project);
+  displayProject(project.name, project.priority, project.dueDate);
+}
