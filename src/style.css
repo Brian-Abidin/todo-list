@@ -230,11 +230,12 @@ input[type="text"] {
   border: 1px solid rgb(255, 255, 255);
   min-width: 305px;
   display: none;
+  background-color: rgb(124, 168, 219);
 }
 
 .cleft {
   width: 40vw;
-  background-color: rgb(150, 236, 236);
+  background-color: rgb(124, 168, 219);
   border: 2px solid rgb(255, 255, 255);
   border-radius: 10px;
   margin: 10px;
@@ -284,9 +285,18 @@ input[type="text"] {
 
 .project-priority {
   width: 30px;
-  background-color: green;
   border-radius: 2px;
   height: 50%;
+}
+
+.finish-button {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border-style: none;
+  background-color: white;
+  cursor: grab;
+  margin-left: 20px;
 }
 
 .project-title {
@@ -318,7 +328,7 @@ input[type="text"] {
   height: 40px;
   font-size: 20px;
   color: rgb(255, 255, 255);
-  background-color: rgb(9, 133, 248);
+  background-color: rgb(70, 114, 156);
   border-radius: 10px;
 }
 
@@ -382,6 +392,10 @@ input[type="text"] {
   flex-direction: column;
   border-bottom: 2px solid black;
   overflow-wrap: break-word;
+}
+
+.priority-level {
+  font-weight: 700;
 }
 
 .right-tags {
@@ -485,7 +499,6 @@ input[type="text"] {
     "notes checklist"
     "add add";
   gap: 5px;
-  background-color: rgb(150, 236, 236);
 }
 
 .new-notes,
