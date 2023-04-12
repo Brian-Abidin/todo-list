@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { fillInfo, updateProjectInfo } from "./functions/createProject";
+import { updateProjectInfo } from "./functions/createProject";
 import {
   allProjects,
   greeting,
@@ -9,10 +9,13 @@ import {
   formClose,
   form,
   btnSubmit,
-  rightEdit
+  rightEdit,
+  rightDelete
 } from "./functions/domElements";
 import closeTheForm, { openForm } from "./functions/openCloseForm";
 import submitForm from "./functions/submitForm";
+import fillInfo from "./functions/fillInfo";
+import checkDelete from "./functions/checkDelete";
 
 /* 
 To-do list; objects that are created 
@@ -121,6 +124,10 @@ rightEdit.addEventListener("click", (e) => {
   btnSubmit.type = "button";
   openForm();
   fillInfo();
+});
+
+rightDelete.addEventListener("click", () => {
+  checkDelete();
 });
 
 console.log(resultFormatted);
