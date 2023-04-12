@@ -13,6 +13,7 @@ export default function addValues() {
 
   // fomatting time value
   const combinedDate = `${dateValue} ${timeValue}`;
+  console.log(combinedDate);
   const timeFormatted = new Date(combinedDate);
   const newTime = format(timeFormatted, "h:mm a");
   console.log(newTime);
@@ -37,12 +38,16 @@ export default function addValues() {
     newTime,
     tagValue
   );
-  createProject(
-    taskValue,
-    descriptionValue,
-    urgency,
-    dateValue,
-    newTime,
-    tagValue
-  );
+  if (btnSubmit.type === "submit") {
+    createProject(
+      taskValue,
+      descriptionValue,
+      urgency,
+      dateValue,
+      newTime,
+      tagValue
+    );
+  } else {
+    console.log("updating project info");
+  }
 }
