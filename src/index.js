@@ -132,4 +132,10 @@ rightDelete.addEventListener("click", () => {
   checkDelete();
 });
 
+// finishBtn.addEventListener("change", () => {
+//   if (this.checked) {
+//     console.log("checking works!");
+//   }
+// });
+
 console.log(resultFormatted);
