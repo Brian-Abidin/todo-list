@@ -1,24 +1,6 @@
 import { parseISO } from "date-fns";
 import format from "date-fns/format";
-import closeTheForm from "./openCloseForm";
-import {
-  allProjects,
-  contentLeft,
-  contentRight,
-  displayTags,
-  displayTaskName,
-  dueDateText,
-  dueTimeText,
-  priorityLevel,
-  rightDelete,
-  rightDescription,
-  rightPriority,
-  rightEdit,
-  form,
-  low,
-  medium,
-  high
-} from "./domElements";
+import { allProjects, contentRight, rightDelete } from "./domElements";
 import displayProject from "./displayProject";
 
 // function createTags(tags) {
@@ -172,19 +154,19 @@ export default function createProject(name, desc, urgency, date, time, tag) {
 //   }
 // }
 
-(function checkDelete() {
-  rightDelete.addEventListener("click", (e) => {
-    console.log(e.target.id);
-    const projectId = Number(e.target.id);
-    const projectIndex = projectId - 1;
-    const element = document.getElementById(`project${projectId}`);
-    console.log("check Delete", projectIndex);
-    allProjects.splice(projectIndex, 1);
-    element.remove();
-    contentRight.style.display = "none";
-    updateProjectIds();
-  });
-})();
+// (function checkDelete() {
+//   rightDelete.addEventListener("click", (e) => {
+//     console.log(e.target.id);
+//     const projectId = Number(e.target.id);
+//     const projectIndex = projectId - 1;
+//     const element = document.getElementById(`project${projectId}`);
+//     console.log("check Delete", projectIndex);
+//     allProjects.splice(projectIndex, 1);
+//     element.remove();
+//     contentRight.style.display = "none";
+//     updateProjectIds();
+//   });
+// })();
 
 // export function fillInfo() {
 //   const name = document.getElementById("display-task-name").textContent;
