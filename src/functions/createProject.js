@@ -1,6 +1,6 @@
 import { parseISO } from "date-fns";
 import format from "date-fns/format";
-import { allProjects, contentRight, rightDelete } from "./domElements";
+import { allProjects } from "./domElements";
 import displayProject from "./displayProject";
 
 // function createTags(tags) {

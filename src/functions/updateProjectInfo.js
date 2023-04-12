@@ -1,6 +1,17 @@
 import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
-import { allProjects, displayTags, low, medium, high } from "./domElements";
+import {
+  allProjects,
+  displayTags,
+  low,
+  medium,
+  high,
+  form
+} from "./domElements";
+import displayOnly from "./displayOnly";
+import closeTheForm from "./openCloseForm";
+import createTags from "./createTags";
+import checkPriority from "./checkPriority";
 
 export default function updateProjectInfo(index) {
   const arrayId = Number(index) - 1;

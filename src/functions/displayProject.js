@@ -6,6 +6,9 @@ import {
   rightEdit,
   displayTags
 } from "./domElements";
+import createTags from "./createTags";
+import displayOnly from "./displayOnly";
+import checkPriority from "./checkPriority";
 
 export default function displayProject(name, urgency, date) {
   const projectOrder = allProjects.length;
