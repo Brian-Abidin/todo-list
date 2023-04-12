@@ -4,7 +4,8 @@ import {
   contentRight,
   rightDelete,
   rightEdit,
-  displayTags
+  displayTags,
+  rightContainer
 } from "./domElements";
 import createTags from "./createTags";
 import displayOnly from "./displayOnly";
@@ -53,6 +54,7 @@ export default function displayProject(name, urgency, date) {
       projectBtn.addEventListener("click", (e) => {
         const thisProject = allProjects[Number(e.target.id) - 1];
         contentRight.style.display = "block";
+        contentRight.style.backgroundColor = "Black";
         rightDelete.setAttribute("id", e.target.id);
         rightEdit.setAttribute("id", e.target.id);
         while (displayTags.firstChild) {
