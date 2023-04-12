@@ -1,6 +1,6 @@
 import { parseISO } from "date-fns";
 import format from "date-fns/format";
-import closeTheForm, { openForm } from "./openCloseForm";
+import closeTheForm from "./openCloseForm";
 import {
   allProjects,
   contentLeft,
@@ -14,47 +14,11 @@ import {
   rightDescription,
   rightPriority,
   rightEdit,
-  btnSubmit,
-  createForm,
   form,
   low,
   medium,
   high
 } from "./domElements";
-
-// function addingTag() {
-//   const tagValue = document.getElementById("add-tag").value;
-//   document.getElementById("add-tag").value = "";
-//   console.log("working Tag");
-//   return {
-//     tagValue
-//   };
-// }
-
-// btnTag.addEventListener("click", addingTag());
-
-// function displayProjectRight(name, desc, urgency, date, time, tags) {
-//   displayTaskName.textContent = name;
-//   priorityLevel.textContent = urgency;
-//   rightDescription.textContent = desc;
-//   dueDateText.textContent = date;
-//   dueTimeText.textContent = time;
-
-//   // const tag = document.createElement("div");
-//   // const tagName = document.createElement("div");
-//   // const removeTag = document.createElement("button");
-
-//   // tag.classList.add("tag1");
-//   // tagName.classList.add("tag-name");
-//   // removeTag.classList.add("remove-tag");
-
-//   // displayTags.appendChild(tag);
-//   // tag.appendChild(tagName);
-//   // tag.appendChild(removeTag);
-
-//   // tagName.textContent = tags;
-//   // removeTag.textContent = "-";
-// }
 
 function createTags(tags) {
   for (let i = 0; i < tags.length; i += 1) {
@@ -86,20 +50,6 @@ function displayOnly(name, desc, urgency, date, time) {
   console.log(date);
   dueDateText.textContent = date;
   dueTimeText.textContent = time;
-
-  // const tag = document.createElement("div");
-  // const tagName = document.createElement("div");
-  // const removeTag = document.createElement("button");
-
-  // tag.classList.add("tag1");
-  // tagName.classList.add("tag-name");
-  // removeTag.classList.add("remove-tag");
-
-  // displayTags.appendChild(tag);
-  // tag.appendChild(tagName);
-  // tag.appendChild(removeTag);
-
-  // removeTag.textContent = "-";
 }
 
 function checkPriority(urgency) {
@@ -326,18 +276,3 @@ export function updateProjectInfo(index) {
   closeTheForm();
   form.reset();
 }
-
-// (function editProject() {
-//   rightEdit.addEventListener("click", (e) => {
-//     const editBtnId = e.target.id;
-//     openForm();
-//     btnSubmit.type = "button";
-//     console.log(btnSubmit.type);
-//     if (btnSubmit.type === "button") {
-//       btnSubmit.addEventListener("click", updateProjectInfo(editBtnId));
-//     } else {
-//       console.log("This is a new project!");
-//     }
-//     console.log(editBtnId);
-//   });
-// })();
