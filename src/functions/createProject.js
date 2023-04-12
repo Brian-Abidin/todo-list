@@ -18,14 +18,15 @@ export default function createProject(name, desc, urgency, date, time, tag) {
     dueDate: dateFormatted,
     time,
     tags: tag,
-    tasks: []
+    tasks: [],
+    done: "no"
   };
   allProjects.push(project);
   displayProject(project.name, project.priority, project.dueDate);
   console.log(allProjects);
 }
 
-export function getProjects(name, desc, urgency, date, time, tag) {
+export function getProjects(name, desc, urgency, date, time, tag, done) {
   const projectOrder = allProjects.length;
   const project = {
     type: "project",
@@ -36,7 +37,8 @@ export function getProjects(name, desc, urgency, date, time, tag) {
     dueDate: date,
     time,
     tags: tag,
-    tasks: []
+    tasks: [],
+    done
   };
   allProjects.push(project);
   displayProject(project.name, project.priority, project.dueDate);
