@@ -2,7 +2,6 @@ import { displayTags } from "./domElements";
 
 export default function createTags(tags) {
   if (tags === "") {
-    // do nothing
   } else {
     const tag = document.createElement("div");
     const tagName = document.createElement("div");
