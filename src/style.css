@@ -122,21 +122,6 @@ input[type="text"] {
   grid-template-columns: repeat(2, 220px);
 }
 
-/* .btnTag {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  left: 190px;
-  top: 122px;
-  border-radius: 10px;
-  border-color: black;
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: grab;
-} */
-
 #add-tag,
 #description {
   border: 2px solid black;
@@ -168,7 +153,6 @@ input[type="text"] {
   border-top-right-radius: 10px;
   display: grid;
   grid-template-columns: auto 1fr auto;
-  /* background-image: linear-gradient(rgb(255, 174, 0), rgb(2, 175, 255)); */
 }
 
 .c_Bottom {
@@ -350,19 +334,6 @@ input[type="text"] {
   font-size: large;
 }
 
-/* .right-task,
-.right-add,
-.right-description,
-.description-text,
-.right-priority,
-.right-tags,
-.right-date {
-  display: inline-block;
-  max-width: 1820px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-} */
-
 .right-add,
 .right-priority,
 .right-date {
@@ -402,15 +373,12 @@ input[type="text"] {
   grid-area: tags;
   border-bottom: 2px solid black;
   display: flex;
-  /* max-height: 108px; */
-  /* overflow-y: auto; */
   justify-content: left;
 }
 
 .display-tags {
   display: flex;
   justify-content: left;
-  /* margin-left: 20px; */
   flex-wrap: wrap;
   gap: 1px;
 }
@@ -429,20 +397,10 @@ input[type="text"] {
   max-width: 250px;
 }
 
-.remove-tag {
-  background-color: transparent;
-  border-style: none;
-  cursor: grab;
-  color: red;
-  font-size: 1.1em;
-}
-
 .right-date {
   grid-area: date;
   flex-direction: column;
   border: 2px solid black;
-  /* max-height: 108px;
-  min-width: 85px; */
 }
 
 .due-time-text,

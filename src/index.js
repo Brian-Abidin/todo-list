@@ -16,51 +16,6 @@ import updateProjectInfo from "./functions/updateProjectInfo";
 import welcome from "./functions/welcome";
 import loadProjects from "./functions/loadProjects";
 
-/* 
-To-do list; objects that are created 
-using factories or constructors/classes
-properties should have at least title, description, dueDate, 
-and priority.
-might be good to include notes and checklist. 
-    - should have projects/seperate list of todos
-    - on open, default project shows with all their todos
-    - users should be able to create new projects and
-    chose which project their todos go into.
-Seperate application logic from DOM-related stuff
-    - creating new todos
-    - setting todos as complete
-    - changing todo priority
-UI should be able to:
-    - view all projects
-    - view all todos in each project (ex. Title, duedate, and priorities)
-    - expand a single todo to see/edit its details
-    - delete a todo
-
-- Write an array 
-*/
-for (let i = Array.length - 1; i < Array.length; i += 1) {
-  // code here adds task to array
-}
-
-// checks which project you are on and adds task from the project based on the array order
-function addTask(title, desc) {
-  const task = {
-    type: "task",
-    title,
-    description: desc
-  };
-  allProjects[0].tasks.push(task);
-}
-
-function addChecklist(title) {
-  const checkList = {
-    type: "checklist",
-    title
-  };
-  allProjects[0].tasks.push(checkList);
-  // DOM element function that adds the checklist box
-}
-
 const result = new Date();
 const resultFormatted = format(result, "MM/dd/yyyy");
 console.log(result);

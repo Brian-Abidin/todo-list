@@ -1,4 +1,3 @@
-// Constants
 const wrapper = document.getElementById("wrapper");
 const header = document.getElementById("header");
 
@@ -14,7 +13,6 @@ const taskName = document.getElementById("task-name");
 const formBottom = document.getElementById("form-bottom");
 const formLeft = document.getElementById("form-left");
 const tagContainer = document.getElementById("tag-container");
-// const btnTag = document.getElementById("btn-tag");
 const addTag = document.getElementById("add-tag");
 const description = document.getElementById("description");
 const formRight = document.getElementById("form-right");
