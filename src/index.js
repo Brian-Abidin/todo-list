@@ -51,6 +51,7 @@ rightEdit.addEventListener("click", (e) => {
   fillInfo();
 });
 
+// delete right button
 rightDelete.addEventListener("click", () => {
   checkDelete();
   window.localStorage.setItem("projects", JSON.stringify(allProjects));
